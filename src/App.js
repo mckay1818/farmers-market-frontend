@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
+const App = () => {
+  const products = [
+    {
+      name: "Sweet Corn",
+      price: 3,
+      quantity: 20,
+      image_file: null,
+      description: "Delicious sweet corn",
+    },
+    {
+      name: "Sweet Corn",
+      price: 3,
+      quantity: 20,
+      image_file: null,
+      description: "Delicious sweet corn",
+    },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="products-container">
+      {products.map(({ name }) => (
+        <div className="product-container">
+          {/* <img /> */}
+          <h2>{name}</h2>
+          <span className="product-summary">
+            <p>Price: $XX.XX</p>
+            <button>view details</button>
+          </span>
+        </div>
+      ))}
+    </main>
   );
-}
+};
 
 export default App;
