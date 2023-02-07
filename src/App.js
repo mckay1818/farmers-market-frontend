@@ -1,36 +1,32 @@
-import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./routes/home/Home";
 
 const App = () => {
-  const products = [
-    {
-      name: "Sweet Corn",
-      price: 3,
-      quantity: 20,
-      image_file: null,
-      description: "Delicious sweet corn",
-    },
-    {
-      name: "Sweet Corn",
-      price: 3,
-      quantity: 20,
-      image_file: null,
-      description: "Delicious sweet corn",
-    },
-  ];
+  // const [token, setToken] = useState("");
+
+  // const products = [
+  //   {
+  //     name: "Sweet Corn",
+  //     price: 3,
+  //     quantity: 20,
+  //     image_file: null,
+  //     description: "Delicious sweet corn",
+  //   },
+  //   {
+  //     name: "Sweet Corn",
+  //     price: 3,
+  //     quantity: 20,
+  //     image_file: null,
+  //     description: "Delicious sweet corn",
+  //   },
+  // ];
+
+  // console.log(products);
 
   return (
-    <main className="products-container">
-      {products.map(({ name }) => (
-        <div className="product-container">
-          {/* <img /> */}
-          <h2>{name}</h2>
-          <span className="product-summary">
-            <p>Price: $XX.XX</p>
-            <button>view details</button>
-          </span>
-        </div>
-      ))}
-    </main>
+    <Routes>
+      <Route exact path="/" element={<Home />} />
+    </Routes>
   );
 };
 
