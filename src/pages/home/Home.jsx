@@ -17,10 +17,13 @@ const Home = () => {
         </Link>
 
         <div className="sign-up-messages">
-          <p>Ready to connect to local buyers? Click here for Seller sign up</p>
           <p>
-            Need an account to start buying from local growers? Click here for
-            User sign up
+            Ready to connect to local buyers?
+            <Link to="/seller-signup">Click here for Seller sign up</Link>
+          </p>
+          <p>
+            Need an account to start buying from local growers?
+            <Link to="/customer-signup">Click here for User sign up</Link>
           </p>
         </div>
       </section>

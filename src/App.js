@@ -1,31 +1,12 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./routes/home/Home";
+import Home from "./pages/home/Home";
 import Navigation from "./components/Navigation";
-import SellerSignUpForm from "./components/SellerSignUpForm";
-import CustomerSignUpForm from "./components/CustomerSignUpForm";
-import Login from "./routes/login/Login";
+import SellerSignUpForm from "./pages/seller-signup/SellerSignUpForm";
+import CustomerSignUpForm from "./pages/customer-signup/CustomerSignUpForm";
+import Login from "./pages/login/Login";
 
 const App = () => {
   // const [token, setToken] = useState("");
-
-  // const products = [
-  //   {
-  //     name: "Sweet Corn",
-  //     price: 3,
-  //     quantity: 20,
-  //     image_file: null,
-  //     description: "Delicious sweet corn",
-  //   },
-  //   {
-  //     name: "Sweet Corn",
-  //     price: 3,
-  //     quantity: 20,
-  //     image_file: null,
-  //     description: "Delicious sweet corn",
-  //   },
-  // ];
-
-  // console.log(products);
 
   return (
     <Routes>
