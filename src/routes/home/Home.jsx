@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -8,7 +9,13 @@ const Home = () => {
         <p>Connecting Local Growers to Local Buyers</p>
       </main>
       <section>
-        <button>sign in</button>
+        {/* add links to login, signup forms */}
+        {/* <Route index element={<SellerSignUpForm />} />
+      <Route index element={<CustomerSignUpForm />} /> */}
+        <Link to="/login">
+          <button>sign in</button>
+        </Link>
+
         <div className="sign-up-messages">
           <p>Ready to connect to local buyers? Click here for Seller sign up</p>
           <p>

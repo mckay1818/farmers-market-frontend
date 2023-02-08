@@ -1,5 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./routes/home/Home";
+import Navigation from "./components/Navigation";
+import SellerSignUpForm from "./components/SellerSignUpForm";
+import CustomerSignUpForm from "./components/CustomerSignUpForm";
+import Login from "./routes/login/Login";
 
 const App = () => {
   // const [token, setToken] = useState("");
@@ -25,7 +29,10 @@ const App = () => {
 
   return (
     <Routes>
-      <Route exact path="/" element={<Home />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      {/* <Route path="/seller-signup" element={<SellerSignUp />} /> */}
+      {/* <Route element={<Navigation />} /> */}
     </Routes>
   );
 };
