@@ -2,6 +2,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./pages/error/ErrorPage";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
+import ShopHome from "./pages/shop-home/ShopHome";
+import SellerPage from "./pages/seller-page/SellerPage";
 import "./App.css";
 
 const router = createBrowserRouter([
@@ -26,14 +28,24 @@ const router = createBrowserRouter([
   //   children: [],
   // },
   // {
-  //   path: "/sellers",
-  //   element: <SellerHome />,
+  //   path: "/sellers/:sellerShopName",
+  //   element: <SellerPage />,
   //   children: [],
   // },
+  {
+    path: "/sellers",
+    children: [
+      { path: "/sellers", element: <ShopHome /> },
+      { path: "/sellers/:sellerShopName", element: <SellerPage /> },
+    ],
+  },
   // {
-  //   path: "/customers",
+  //   path: "/customers/:customerUsername",
   //   element: <CustomerHome />,
-  //   children: [],
+  //   children: [
+  //      { path: "/customers/:customerUsername/profile", element: <CustomerProfile /> },
+  //      { path: "/customers/:customerUsername/cart", element: <CustomerCart /> },
+  // ],
   // },
 ]);
 
