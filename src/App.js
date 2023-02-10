@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import RootLayout from "./pages/root/RootLayout";
+import ErrorPage from "./pages/error/ErrorPage";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import "./App.css";
@@ -7,23 +7,34 @@ import "./App.css";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    errorElement: <ErrorPage />,
     children: [
+      { path: "/", element: <Home /> },
       { path: "/login", element: <Login /> },
-      { path: "/seller-signup", element: <SellerSignUp /> },
-      { path: "/customer-signup", element: <CustomerSignUp /> },
+      // { path: "/seller-signup", element: <SellerSignUp /> },
+      // { path: "/customer-signup", element: <CustomerSignUp /> },
     ],
   },
-  {
-    path: "/sellers",
-    element: <SellerHome />,
-    children: [],
-  },
-  {
-    path: "/customers",
-    element: <CustomerHome />,
-    children: [],
-  },
+  // {
+  //   path: "/seller-signup",
+  //   element: <SellerSignUp />,
+  //   children: [],
+  // },
+  // {
+  //   path: "/customer-signup",
+  //   element: <CustomerSignUp />,
+  //   children: [],
+  // },
+  // {
+  //   path: "/sellers",
+  //   element: <SellerHome />,
+  //   children: [],
+  // },
+  // {
+  //   path: "/customers",
+  //   element: <CustomerHome />,
+  //   children: [],
+  // },
 ]);
 
 const App = () => {

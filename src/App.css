@@ -12,3 +12,8 @@ body {
     text-align: center;
     font-family: "Playfair Display", Georgia, 'Times New Roman', Times, serif;
 }
+
+h1 {
+    font-size: 60px;
+    color: white;
+}

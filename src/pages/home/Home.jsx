@@ -1,18 +1,14 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 
 const Home = () => {
   return (
-    <React.Fragment>
+    <>
       <main>
         <h1>Farmer's Market</h1>
         <p>Connecting Local Growers to Local Buyers</p>
       </main>
       <section>
-        {/* add links to login, signup forms */}
-        {/* <Route index element={<SellerSignUpForm />} />
-      <Route index element={<CustomerSignUpForm />} /> */}
         <Link to="/login">
           <button>sign in</button>
         </Link>
@@ -36,7 +32,7 @@ const Home = () => {
           </a>
         </p>
       </footer>
-    </React.Fragment>
+    </>
   );
 };
 
