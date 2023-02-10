@@ -1,21 +1,35 @@
-import { Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import RootLayout from "./pages/root/RootLayout";
 import Home from "./pages/home/Home";
-import Navigation from "./components/Navigation";
-import SellerSignUpForm from "./pages/seller-signup/SellerSignUpForm";
-import CustomerSignUpForm from "./pages/customer-signup/CustomerSignUpForm";
 import Login from "./pages/login/Login";
+import "./App.css";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    children: [
+      { path: "/login", element: <Login /> },
+      { path: "/seller-signup", element: <SellerSignUp /> },
+      { path: "/customer-signup", element: <CustomerSignUp /> },
+    ],
+  },
+  {
+    path: "/sellers",
+    element: <SellerHome />,
+    children: [],
+  },
+  {
+    path: "/customers",
+    element: <CustomerHome />,
+    children: [],
+  },
+]);
 
 const App = () => {
   // const [token, setToken] = useState("");
 
-  return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      {/* <Route path="/seller-signup" element={<SellerSignUp />} /> */}
-      {/* <Route element={<Navigation />} /> */}
-    </Routes>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;

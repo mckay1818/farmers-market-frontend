@@ -15,8 +15,8 @@ const LoginForm = () => {
     event.preventDefault();
   };
 
-  const onFormChange = (event) => {
-    const { name, value } = event.target;
+  const onFormChange = (changeEvent) => {
+    const { name, value } = changeEvent.target;
     setFormFields({ ...formFields, [name]: value });
   };
 
