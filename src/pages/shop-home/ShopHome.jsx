@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 // const SELLERS = [
@@ -32,15 +32,17 @@ import { Link } from "react-router-dom";
 const ShopHome = () => {
   const [sellersState, setSellersState] = useState([]);
 
+  useEffect(() => {
+    fetchSellers();
+  }, []);
+
   const fetchSellers = () => {
     fetch("http://127.0.0.1:5000/sellers")
       .then((response) => {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         setSellersState(data);
-        console.log(sellersState);
       });
   };
 
@@ -57,7 +59,6 @@ const ShopHome = () => {
   return (
     <>
       <h1>All of the shops will go here!</h1>
-      <button onClick={fetchSellers}>get sellers</button>
       <ul>{sellers}</ul>
     </>
   );
