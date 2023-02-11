@@ -14,16 +14,15 @@ const defaultFormFields = {
 
 const CustomerSignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
-
   const resetFormFields = () => setFormFields(defaultFormFields);
-
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
   };
 
   const onFormChange = (changeEvent) => {
-    const { name, value } = changeEvent.target;
-    setFormFields({ ...formFields, [name]: value });
+    const { key, value } = changeEvent.target;
+    setFormFields({ ...formFields, [key]: value });
   };
 
   return (

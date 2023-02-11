@@ -17,26 +17,14 @@ const router = createBrowserRouter([
       // { path: "/customer-signup", element: <CustomerSignUp /> },
     ],
   },
-  // {
-  //   path: "/seller-signup",
-  //   element: <SellerSignUp />,
-  //   children: [],
-  // },
-  // {
-  //   path: "/customer-signup",
-  //   element: <CustomerSignUp />,
-  //   children: [],
-  // },
-  // {
-  //   path: "/sellers/:sellerShopName",
-  //   element: <SellerPage />,
-  //   children: [],
-  // },
+  //SELLER ROUTES ARE NOT PROTECTED ASIDE FROM PROFILE (AND ADD PRODUCT FUNCTIONALITY)
   {
     path: "/sellers",
     children: [
       { index: true, element: <ShopHome /> },
       { path: "/sellers/:sellerShopName", element: <SellerPage /> },
+      // NEW PRODUCT FORM (restricted modal, not new path)
+      // { path: "/sellers/:sellerShopName/profile", element: <SellerProfile /> },
     ],
   },
   // {
