@@ -11,7 +11,7 @@ const router = createBrowserRouter([
     path: "/",
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <Home /> },
+      { path: "/", element: <Home /> },
       { path: "/login", element: <Login /> },
       // { path: "/seller-signup", element: <SellerSignUp /> },
       // { path: "/customer-signup", element: <CustomerSignUp /> },
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
   {
     path: "/sellers",
     children: [
-      { index: true, element: <ShopHome /> },
+      { path: "/sellers", element: <ShopHome /> },
       { path: "/sellers/:sellerShopName", element: <SellerPage /> },
       // NEW PRODUCT FORM (restricted modal, not new path)
       // { path: "/sellers/:sellerShopName/profile", element: <SellerProfile /> },
