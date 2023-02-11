@@ -36,7 +36,7 @@ const ShopHome = () => {
       <ul>
         {SELLERS.map((seller) => (
           <li key={seller.id}>
-            <Link to={`/sellers/${seller.store_name.replace("-", " ")}`}>
+            <Link to={`/sellers/${seller.store_name}`}>
               {seller.store_name}
             </Link>
           </li>
