@@ -31,14 +31,21 @@ import axios from "axios";
 // ];
 
 const ShopHome = () => {
+  const [error, setError] = useState();
+  const [isLoading, setIsLoading] = useState(false);
   const [sellersState, setSellersState] = useState([]);
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:5000/sellers").then((response) => {
-      console.log(response);
-      console.log(response.data);
-      setSellersState(response.data);
-    });
+    axios
+      .get("http://127.0.0.1:5000/sellers")
+      .then((response) => {
+        setIsLoading(true);
+        setSellersState(response.data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setError("Sellers failed to load");
+      });
   }, []);
 
   const sellers = sellersState.map((seller) => {
@@ -54,7 +61,8 @@ const ShopHome = () => {
   return (
     <>
       <h1>All of the shops will go here!</h1>
-      <ul>{sellers}</ul>
+      {isLoading && <p>Loading sellers</p>}
+      {!isLoading && sellersState && <ul>{sellers}</ul>}
     </>
   );
 };
