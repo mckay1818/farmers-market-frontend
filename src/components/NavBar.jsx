@@ -1,19 +1,28 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Outlet } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 function NavBar() {
   return (
     <>
       <Navbar expand="lg" sticky="top" className="NavBar">
         <Container>
-          <Navbar.Brand href="#home">🍅 Farmer's Market</Navbar.Brand>
+          <Navbar.Brand as={NavLink} to="/sellers">
+            🍅 Farmer's Market
+          </Navbar.Brand>
+          <SearchBar />
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">Link</Nav.Link>
+              <Nav.Link as={NavLink} to="/sellers">
+                Home
+              </Nav.Link>
+              {/* TODO - FIGURE OUT LINKING TO PAGE */}
+              <Nav.Link as={NavLink} to="/sellers/:sellerShopName">
+                Profile
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
