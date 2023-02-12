@@ -6,6 +6,7 @@ import ShopHome from "./pages/shop-home/ShopHome";
 import SellerPage from "./pages/seller-page/SellerPage";
 import NavBar from "./components/NavBar";
 import "./App.css";
+import Layout from "./components/Layout";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
   //SELLER ROUTES ARE NOT PROTECTED ASIDE FROM PROFILE (AND ADD PRODUCT FUNCTIONALITY)
   {
     path: "/sellers",
-    element: <NavBar />,
+    element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
       { path: "/sellers", element: <ShopHome /> },

@@ -9,7 +9,9 @@ const SellerPage = () => {
 
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:5000/sellers/${sellerShopName}/products`)
+      .get(
+        `${process.env.REACT_APP_BACKEND_URL}/sellers/${sellerShopName}/products`
+      )
       .then((response) => {
         console.log(response);
         console.log(response.data);
