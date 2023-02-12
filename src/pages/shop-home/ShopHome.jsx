@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 // const SELLERS = [
 //   {
@@ -33,25 +34,16 @@ const ShopHome = () => {
   const [sellersState, setSellersState] = useState([]);
 
   useEffect(() => {
-    fetchSellers();
+    axios.get("http://127.0.0.1:5000/sellers").then((response) => {
+      console.log(response);
+      setSellersState(response.data);
+    });
   }, []);
-
-  const fetchSellers = () => {
-    fetch("http://127.0.0.1:5000/sellers")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setSellersState(data);
-      });
-  };
 
   const sellers = sellersState.map((seller) => {
     return (
       <li key={seller.id}>
-        <Link to={`/sellers/${seller.store_name.replace("-", " ")}`}>
-          {seller.store_name}
-        </Link>
+        <Link to={`/sellers/${seller.store_name}`}>{seller.store_name}</Link>
       </li>
     );
   });
