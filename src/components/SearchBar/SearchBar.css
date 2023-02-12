@@ -1,0 +1,10 @@
+.search-bar {
+    display: flex;
+    align-items: flex-end;
+}
+
+.search-label {
+    margin-right: 5px;
+    font-size: large;
+    font-weight: 600;
+}
