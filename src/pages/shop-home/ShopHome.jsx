@@ -36,6 +36,7 @@ const ShopHome = () => {
   useEffect(() => {
     axios.get("http://127.0.0.1:5000/sellers").then((response) => {
       console.log(response);
+      console.log(response.data);
       setSellersState(response.data);
     });
   }, []);
@@ -43,7 +44,9 @@ const ShopHome = () => {
   const sellers = sellersState.map((seller) => {
     return (
       <li key={seller.id}>
-        <Link to={`/sellers/${seller.store_name}`}>{seller.store_name}</Link>
+        <Link to={`/sellers/${seller.store_name}`} key={seller.id}>
+          {seller.store_name}
+        </Link>
       </li>
     );
   });

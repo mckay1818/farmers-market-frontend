@@ -12,31 +12,18 @@ const SellerPage = () => {
       .get(`http://127.0.0.1:5000/sellers/${sellerShopName}/products`)
       .then((response) => {
         console.log(response);
+        console.log(response.data);
         setProductsState(response.data);
       });
-  }, []);
-
-  // const fetchProducts = () => {
-  //   fetch(`http://127.0.0.1:5000/sellers/${sellerShopName}/products`)
-  //     .then((response) => {
-  //       if (response.ok) {
-  //         console.log(response);
-  //         console.log(response.json());
-  //         return response.json();
-  //       }
-  //     })
-  //     .then((data) => {
-  //       console.log(data);
-  //       setProductsState(data);
-  //     });
-  // };
+  }, [sellerShopName]);
 
   const productsList = productsState.map((product) => {
-    console.log(productsState);
     return (
       <li key={product.id}>
         <ProductTile product={product}>
-          <Link to={`/sellers/products/${product.name}`}>{product.name}</Link>
+          {/* <Link to={`/sellers/${sellerShopName}/products/${product.name}`}> */}
+          {product.name}
+          {/* </Link> */}
         </ProductTile>
       </li>
     );
@@ -44,7 +31,6 @@ const SellerPage = () => {
 
   return (
     <>
-      {console.log(productsList)}
       <h1>{sellerShopName}</h1>
       <main>{productsList}</main>
     </>

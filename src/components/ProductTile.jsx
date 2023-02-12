@@ -1,4 +1,5 @@
-const ProductTile = (product) => {
+const ProductTile = ({ product }) => {
+  console.log(product);
   return (
     <div className="product-tile">
       {/* <img /> */}
