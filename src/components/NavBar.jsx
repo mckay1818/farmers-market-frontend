@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
 function NavBar() {
   return (
     <>
-      <Navbar bg="light" expand="lg">
+      <Navbar expand="lg" sticky="top" className="NavBar">
         <Container>
           <Navbar.Brand href="#home">🍅 Farmer's Market</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -4,9 +4,8 @@ import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import ShopHome from "./pages/shop-home/ShopHome";
 import SellerPage from "./pages/seller-page/SellerPage";
-import NavBar from "./components/NavBar";
-import "./App.css";
 import Layout from "./components/Layout";
+import "./App.css";
 
 const router = createBrowserRouter([
   {
