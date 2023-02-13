@@ -1,15 +1,14 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-const SellerSignUpForm = () => {
+const CustomerSignUpForm = () => {
   const formik = useFormik({
     initialValues: {
       firstName: "",
       lastName: "",
       email: "",
+      username: "",
       password: "",
-      storeName: "",
-      storeDescription: "",
       address1: "",
       city: "",
       region: "",
@@ -72,6 +71,19 @@ const SellerSignUpForm = () => {
         <div>{formik.errors.email}</div>
       ) : null}
 
+      <label htmlFor="username">Username: </label>
+      <input
+        id="username"
+        name="username"
+        type="username"
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values.username}
+      />
+      {formik.touched.username && formik.errors.username ? (
+        <div>{formik.errors.username}</div>
+      ) : null}
+
       <label htmlFor="password">Password: </label>
       <input
         id="password"
@@ -83,32 +95,6 @@ const SellerSignUpForm = () => {
       />
       {formik.touched.password && formik.errors.password ? (
         <div>{formik.errors.password}</div>
-      ) : null}
-
-      <label htmlFor="storeName">Store Name: </label>
-      <input
-        id="storeName"
-        name="storeName"
-        type="storeName"
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        value={formik.values.storeName}
-      />
-      {formik.touched.storeName && formik.errors.storeName ? (
-        <div>{formik.errors.storeName}</div>
-      ) : null}
-
-      <label htmlFor="storeDescription">Store Description: </label>
-      <input
-        id="storeDescription"
-        name="storeDescription"
-        type="storeDescription"
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        value={formik.values.storeDescription}
-      />
-      {formik.touched.storeDescription && formik.errors.storeDescription ? (
-        <div>{formik.errors.storeDescription}</div>
       ) : null}
 
       <label htmlFor="address1">Street Address:</label>
@@ -168,4 +154,4 @@ const SellerSignUpForm = () => {
   );
 };
 
-export default SellerSignUpForm;
+export default CustomerSignUpForm;

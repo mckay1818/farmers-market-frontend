@@ -5,6 +5,7 @@ import ErrorPage from "./pages/error/ErrorPage";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import SellerSignUp from "./pages/seller-signup/SellerSignUp";
+import CustomerSignUp from "./pages/customer-signup/CustomerSignup";
 import ShopHome from "./pages/shop-home/ShopHome";
 import SellerPage from "./pages/seller-page/SellerPage";
 
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/login", element: <Login /> },
       { path: "/seller-signup", element: <SellerSignUp /> },
-      // { path: "/customer-signup", element: <CustomerSignUp /> },
+      { path: "/customer-signup", element: <CustomerSignUp /> },
     ],
   },
   //SELLER ROUTES ARE NOT PROTECTED ASIDE FROM PROFILE (AND ADD PRODUCT FUNCTIONALITY)
