@@ -19,3 +19,21 @@ h1 {
     font-size: 60px;
     color: white;
 }
+
+.home-body {
+    margin-top: 5%;
+}
+
+.login-button {
+    padding: 15px;
+    width: 30%;
+    margin-bottom: 2rem;
+}
+
+.sign-up-messages {
+    margin: 5px auto;
+    padding: 5px;
+    border-radius: 5%;
+    font-weight: bold;
+    width: 80%;
+}

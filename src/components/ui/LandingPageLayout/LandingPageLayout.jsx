@@ -9,7 +9,6 @@ const LandingPageLayout = ({ children }) => {
     <>
       <LandingHeader />
       <Outlet />
-      <Container className="main-content">{children}</Container>
       <Footer />
     </>
   );

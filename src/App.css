@@ -54,7 +54,8 @@ border: 1px solid black;
 border-radius: 3%;
 display: flex;
 flex-direction: column;
-width: 40%;
+flex-wrap: wrap;
+width: 60%;
 margin: 20px auto;
 background-color: #c1e293;
 }
@@ -64,6 +65,7 @@ input {
     margin: auto;
 }
 
-a {
-    color: rgb(19, 31, 147);
+.errors {
+    color: red;
+    font-size: small;
 }

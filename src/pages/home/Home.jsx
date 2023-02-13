@@ -3,21 +3,25 @@ import "./Home.css";
 
 const Home = () => {
   return (
-    <>
+    <div className="home-body">
       <Link to="/login">
-        <button>sign in</button>
+        <button className="login-button">sign in</button>
       </Link>
       <div className="sign-up-messages">
         <p>
           Ready to connect to local buyers?
-          <Link to="/seller-signup">Click here for Seller sign up</Link>
+          <Link to="/seller-signup" className="links">
+            Click here for Seller sign up
+          </Link>
         </p>
         <p>
           Need an account to start buying from local growers?
-          <Link to="/customer-signup">Click here for Customer sign up</Link>
+          <Link to="/customer-signup" className="links">
+            Click here for Customer sign up
+          </Link>
         </p>
       </div>
-    </>
+    </div>
   );
 };
 

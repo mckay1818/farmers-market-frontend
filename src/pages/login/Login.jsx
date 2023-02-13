@@ -6,15 +6,17 @@ const Login = () => {
   return (
     <>
       <LoginForm />
-      <div className="sign-up-messages">
-        Need to create an account?
-        <div className="sign-up-links">
-          <Link to="/seller-signup" className="link">
-            Click here for Seller sign up
-          </Link>
-          <Link to="/customer-signup" className="link">
-            Click here for Customer sign up
-          </Link>
+      <div className="messages">
+        <div className="link-group">
+          Need to create an account?
+          <div className="sign-up-links">
+            <Link to="/seller-signup" className="links">
+              Click here for Seller sign up
+            </Link>
+            <Link to="/customer-signup" className="links">
+              Click here for Customer sign up
+            </Link>
+          </div>
         </div>
       </div>
     </>

@@ -42,7 +42,7 @@ const CustomerSignUpForm = () => {
         value={formik.values.firstName}
       />
       {formik.touched.firstName && formik.errors.firstName ? (
-        <div>{formik.errors.firstName}</div>
+        <div className="errors">{formik.errors.firstName}</div>
       ) : null}
 
       <label htmlFor="lastName">Last Name: </label>
@@ -55,7 +55,7 @@ const CustomerSignUpForm = () => {
         value={formik.values.lastName}
       />
       {formik.touched.lastName && formik.errors.lastName ? (
-        <div>{formik.errors.lastName}</div>
+        <div className="errors">{formik.errors.lastName}</div>
       ) : null}
 
       <label htmlFor="email">Email Address: </label>
@@ -68,7 +68,7 @@ const CustomerSignUpForm = () => {
         value={formik.values.email}
       />
       {formik.touched.email && formik.errors.email ? (
-        <div>{formik.errors.email}</div>
+        <div className="errors">{formik.errors.email}</div>
       ) : null}
 
       <label htmlFor="username">Username: </label>
@@ -81,7 +81,7 @@ const CustomerSignUpForm = () => {
         value={formik.values.username}
       />
       {formik.touched.username && formik.errors.username ? (
-        <div>{formik.errors.username}</div>
+        <div className="errors">{formik.errors.username}</div>
       ) : null}
 
       <label htmlFor="password">Password: </label>
@@ -94,7 +94,7 @@ const CustomerSignUpForm = () => {
         value={formik.values.password}
       />
       {formik.touched.password && formik.errors.password ? (
-        <div>{formik.errors.password}</div>
+        <div className="errors">{formik.errors.password}</div>
       ) : null}
 
       <label htmlFor="address1">Street Address:</label>
@@ -107,7 +107,7 @@ const CustomerSignUpForm = () => {
         value={formik.values.address1}
       />
       {formik.touched.address1 && formik.errors.address1 ? (
-        <div>{formik.errors.address1}</div>
+        <div className="errors">{formik.errors.address1}</div>
       ) : null}
 
       <label htmlFor="city">City: </label>
@@ -120,7 +120,7 @@ const CustomerSignUpForm = () => {
         value={formik.values.city}
       />
       {formik.touched.city && formik.errors.city ? (
-        <div>{formik.errors.city}</div>
+        <div className="errors">{formik.errors.city}</div>
       ) : null}
 
       <label htmlFor="region">Region: </label>
@@ -133,7 +133,7 @@ const CustomerSignUpForm = () => {
         value={formik.values.region}
       />
       {formik.touched.region && formik.errors.region ? (
-        <div>{formik.errors.region}</div>
+        <div className="errors">{formik.errors.region}</div>
       ) : null}
 
       <label htmlFor="postalCode">Postal Code:</label>
@@ -146,7 +146,7 @@ const CustomerSignUpForm = () => {
         value={formik.values.postalCode}
       />
       {formik.touched.postalCode && formik.errors.postalCode ? (
-        <div>{formik.errors.postalCode}</div>
+        <div className="errors">{formik.errors.postalCode}</div>
       ) : null}
 
       <button type="submit">Submit</button>

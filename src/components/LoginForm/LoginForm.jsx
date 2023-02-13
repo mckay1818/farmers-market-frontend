@@ -27,7 +27,7 @@ const LoginForm = () => {
         value={formik.values.email}
       />
       {formik.touched.email && formik.errors.email ? (
-        <div>{formik.errors.email}</div>
+        <div className="errors">{formik.errors.email}</div>
       ) : null}
 
       <label htmlFor="password">Password: </label>
@@ -40,7 +40,7 @@ const LoginForm = () => {
         value={formik.values.password}
       />
       {formik.touched.password && formik.errors.password ? (
-        <div>{formik.errors.password}</div>
+        <div className="errors">{formik.errors.password}</div>
       ) : null}
 
       <button type="submit">Submit</button>

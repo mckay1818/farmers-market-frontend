@@ -1,0 +1,18 @@
+.messages {
+    width: 50%;
+    margin:auto;
+    margin-bottom: 15px;
+    padding: 5px;
+    border-radius: 5%;
+    background-color: #def1c399;
+}
+
+.link-group {
+    margin-bottom: 5px;
+}
+
+.links {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-weight: bold;
+}   
