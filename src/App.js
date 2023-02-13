@@ -4,8 +4,8 @@ import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import ShopHome from "./pages/shop-home/ShopHome";
 import SellerPage from "./pages/seller-page/SellerPage";
-import LandingPageLayout from "./components/LandingPageLayout/LandingPageLayout";
-import Layout from "./components/Layout/Layout";
+import LandingPageLayout from "./components/ui/LandingPageLayout/LandingPageLayout";
+import Layout from "./components/ui/Layout/Layout";
 import UserContext from "./contexts/UserContext";
 import "./App.css";
 
