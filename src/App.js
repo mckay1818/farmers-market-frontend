@@ -4,7 +4,8 @@ import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import ShopHome from "./pages/shop-home/ShopHome";
 import SellerPage from "./pages/seller-page/SellerPage";
-import Layout from "./components/Layout";
+import Layout from "./components/Layout/Layout";
+import UserContext from "./contexts/UserContext";
 import "./App.css";
 
 const router = createBrowserRouter([

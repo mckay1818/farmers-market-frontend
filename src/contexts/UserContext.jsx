@@ -1,3 +1,9 @@
-import { createContext } from "react";
+import React from "react";
 
-export const UserContext = createContext(null);
+const UserContext = React.createContext({
+  isLoggedIn: false,
+  isCustomer: false,
+  isSeller: false,
+});
+
+export default UserContext;

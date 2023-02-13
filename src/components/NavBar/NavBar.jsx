@@ -19,7 +19,7 @@ function NavBar() {
           <Navbar.Collapse id="basic-navbar-nav">
             <SearchBar />
             <Nav className="me-auto">
-              <Nav.Link as={NavLink} to="/sellers">
+              <Nav.Link as={NavLink} end to="/sellers">
                 Home
               </Nav.Link>
               {/* TODO - FIGURE OUT LINKING TO PAGE */}

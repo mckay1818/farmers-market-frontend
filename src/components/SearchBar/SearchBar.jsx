@@ -7,6 +7,7 @@ const SearchBar = () => {
         search:
       </label>
       <input
+        className="search-input"
         name="search"
         type="text"
         // value={formFields.email}

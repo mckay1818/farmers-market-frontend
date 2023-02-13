@@ -5,6 +5,7 @@
     font-weight: 600;
     display: flex;
     flex-wrap: nowrap;
+    margin-bottom: 2rem;
 }
 .navbar-brand {
     font-size: 2rem;

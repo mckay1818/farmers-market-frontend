@@ -8,3 +8,9 @@
     font-size: large;
     font-weight: 600;
 }
+
+.search-input {
+    border: none;
+    border-radius: 5%;
+    width: 10rem;
+}
