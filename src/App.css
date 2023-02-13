@@ -3,8 +3,8 @@
 body {
     background: url("/src/assets/landing-page.jpg") no-repeat center center fixed;
     background-size: cover;
-    overflow: hidden;
     width: 100%; 
+    overflow: scroll;
     text-align: center;
     font-family: "Playfair Display", Georgia, 'Times New Roman', Times, serif;
 }
@@ -12,4 +12,58 @@ body {
 h1 {
     font-size: 60px;
     color: white;
+}
+
+li {
+    list-style-type:none;
+}
+
+button{
+margin: 10px;
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+appearance: none;
+background-color: rgb(255, 200, 0);
+border: 1px solid black;
+border-radius: 6px;
+box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+display: inline-block;
+line-height: 20px;
+padding: 6px 16px;
+width: 50%;
+margin: 10px auto;
+}
+
+button:active {
+background-color: rgb(255, 225, 0);
+box-shadow: 0 5px #666;
+transform: translateY(4px);
+}
+
+button:focus:not(:focus-visible):not(.focus-visible) {
+box-shadow: none;
+outline: none;
+}
+
+button:hover {
+background-color: rgb(255, 225, 0);
+}
+
+form {
+padding: 1.5rem;
+border: 1px solid black;
+border-radius: 3%;
+display: flex;
+flex-direction: column;
+width: 40%;
+margin: 20px auto;
+background-color: #c1e293;
+}
+
+input {
+    width: 60%;
+    margin: auto;
+}
+
+a {
+    color: rgb(19, 31, 147);
 }

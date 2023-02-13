@@ -1,4 +1,4 @@
-import CustomerSignUpForm from "../../components/CustomerSignUpForm";
+import CustomerSignUpForm from "../../components/CustomerSignUpForm/CustomerSignUpForm";
 import { Link } from "react-router-dom";
 
 const CustomerSignUp = () => {

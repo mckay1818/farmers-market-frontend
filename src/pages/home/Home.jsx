@@ -7,7 +7,6 @@ const Home = () => {
       <Link to="/login">
         <button>sign in</button>
       </Link>
-
       <div className="sign-up-messages">
         <p>
           Ready to connect to local buyers?

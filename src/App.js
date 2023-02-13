@@ -8,7 +8,6 @@ import SellerSignUp from "./pages/seller-signup/SellerSignUp";
 import CustomerSignUp from "./pages/customer-signup/CustomerSignup";
 import ShopHome from "./pages/shop-home/ShopHome";
 import SellerPage from "./pages/seller-page/SellerPage";
-
 import UserContext from "./contexts/UserContext";
 import "./App.css";
 
