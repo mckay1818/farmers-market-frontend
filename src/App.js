@@ -47,14 +47,14 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  const [token, setToken] = useState("");
+  const [token, setToken] = useState(null);
   const [isSeller, setIsSeller] = useState("");
   const [isCustomer, setIsSisCustomer] = useState("");
 
   return (
     <UserContext.Provider
       value={{
-        isLoggedIn: isLoggedIn,
+        token: token,
         isSeller: isSeller,
         isCustomer: isCustomer,
       }}
