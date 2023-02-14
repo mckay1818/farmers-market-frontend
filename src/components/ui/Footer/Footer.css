@@ -1,5 +1,5 @@
 footer {
-    position:static;
+    position: absolute;
     width: 100%;
     bottom: 0;
     height: 2.5rem;  
