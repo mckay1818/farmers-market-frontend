@@ -1,7 +1,16 @@
 .products-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
     padding: 1rem;
     border: 1px solid black;
+    height: calc(100vh - 100px);
     margin: 1rem 0rem;
     border-radius: 5%;
     background-color: #f3f7ee82;
+}
+
+h1 {
+    margin-bottom: 3rem;
+    font-weight: bold;
 }

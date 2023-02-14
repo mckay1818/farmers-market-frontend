@@ -1,0 +1,20 @@
+.product-tile {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: #f3f7eecd;
+    border: 1px solid black;
+    border-radius: 5%;
+    margin: 2rem;
+    width: 8rem;
+    height: 8rem;
+}
+
+.product-tile:hover {
+    background-color: #f3f7eefa;
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: bold;
+}
