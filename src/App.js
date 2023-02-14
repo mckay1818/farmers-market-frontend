@@ -9,7 +9,7 @@ import SellerSignUp from "./pages/seller-signup/SellerSignUp";
 import CustomerSignUp from "./pages/customer-signup/CustomerSignup";
 import ShopHome from "./pages/shop-home/ShopHome";
 import SellerPage from "./pages/seller-page/SellerPage";
-import UserContext from "./contexts/UserContext";
+import { UserContextProvider } from "./contexts/UserContext";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import "./App.css";
 
@@ -51,21 +51,10 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  const [token, setToken] = useState(null);
-  const [isSeller, setIsSeller] = useState("");
-  const [isCustomer, setIsSisCustomer] = useState("");
-
   return (
-    <UserContext.Provider
-      value={{
-        token: token,
-        isSeller: isSeller,
-        isCustomer: isCustomer,
-        // onLogout: logoutHandler,
-      }}
-    >
+    <UserContextProvider>
       <RouterProvider router={router} />
-    </UserContext.Provider>
+    </UserContextProvider>
   );
 };
 

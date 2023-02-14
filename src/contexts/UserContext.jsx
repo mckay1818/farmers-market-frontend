@@ -1,19 +1,13 @@
-import React, { useContext } from "react";
+import { createContext, useState } from "react";
 
-const UserContext = React.createContext({
-  token: null,
-  isCustomer: false,
-  isSeller: false,
-  // onLogout,
+export const UserContext = createContext({
+  currentUser: null,
+  setCurrentUser: () => {},
 });
 
-// TODO
-// export const UserContextProvider = (props) => {
-//   const []
-// }
+export const UserContextProvider = ({ children }) => {
+  const [currentUser, setCurrentUser] = useState(null);
+  const value = { currentUser, setCurrentUser };
 
-export default UserContext;
-
-// export const useAuth = () => {
-//   return useContext(UserContext);
-// };
+  return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
+};

@@ -1,11 +1,15 @@
+import { useContext } from "react";
+import { NavLink } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { NavLink } from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar";
 import "./NavBar.css";
+import { UserContext } from "../../contexts/UserContext";
 
 function NavBar() {
+  const { currentUser } = useContext(UserContext);
+
   return (
     <>
       <Navbar expand="lg" sticky="top" className="NavBar">

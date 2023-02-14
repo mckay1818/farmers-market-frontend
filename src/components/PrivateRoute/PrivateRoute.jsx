@@ -1,12 +1,12 @@
-import UserContext from "../../contexts/UserContext";
+import { UserContext } from "../../contexts/UserContext";
 import { useNavigate, Outlet } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../ui/Footer/Footer";
 
 const PrivateRoute = ({ children }) => {
-  const token = UserContext.token;
-  const [shouldRedirect, setShouldRedirect] = useState(!token);
+  const { currentUser } = useContext(UserContext);
+  const [shouldRedirect, setShouldRedirect] = useState(!currentUser);
   const navigate = useNavigate();
 
   useEffect(() => {

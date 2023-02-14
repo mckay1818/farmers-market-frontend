@@ -1,11 +1,13 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 import "./LoginForm.css";
 
 const LoginForm = () => {
   const [error, setError] = useState(null);
+  const { setCurrentUser } = useContext(UserContext);
 
   const formik = useFormik({
     initialValues: {
@@ -20,10 +22,11 @@ const LoginForm = () => {
       axios
         .post(`${process.env.REACT_APP_BACKEND_URL}/login`, values)
         .then((response) => {
-          console.log(response);
           const userData = response.data.access_token;
           console.log(userData);
+          console.log(JSON.parse(atob(userData.split(".")[1])));
           localStorage.setItem("token", userData);
+          setCurrentUser(userData);
         })
         .catch((e) => {
           setError(e.response.data.message);
