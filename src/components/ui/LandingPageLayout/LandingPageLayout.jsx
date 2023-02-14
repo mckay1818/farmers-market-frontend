@@ -1,14 +1,15 @@
-import { Container } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import LandingHeader from "../LandingHeader/LandingHeader";
 import "./LandingPageLayout.css";
 
-const LandingPageLayout = ({ children }) => {
+const LandingPageLayout = () => {
   return (
     <>
       <LandingHeader />
-      <Outlet />
+      <main className="main-content">
+        <Outlet />
+      </main>
       <Footer />
     </>
   );

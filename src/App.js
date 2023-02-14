@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LandingPageLayout from "./components/ui/LandingPageLayout/LandingPageLayout";
 import Layout from "./components/ui/Layout/Layout";
@@ -46,9 +47,21 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  // const [token, setToken] = useState("");
+  const [token, setToken] = useState("");
+  const [isSeller, setIsSeller] = useState("");
+  const [isCustomer, setIsSisCustomer] = useState("");
 
-  return <RouterProvider router={router} />;
+  return (
+    <UserContext.Provider
+      value={{
+        isLoggedIn: isLoggedIn,
+        isSeller: isSeller,
+        isCustomer: isCustomer,
+      }}
+    >
+      <RouterProvider router={router} />
+    </UserContext.Provider>
+  );
 };
 
 export default App;

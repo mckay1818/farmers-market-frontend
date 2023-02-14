@@ -1,13 +1,16 @@
-import { Container } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import NavBar from "../../NavBar/NavBar";
+import UserContext from "../../../contexts/UserContext";
 
-const Layout = ({ children }) => {
+const Layout = () => {
   return (
     <>
       <NavBar />
-      <Outlet />
+      {console.log(UserContext)}
+      <main className="main-content">
+        <Outlet />
+      </main>
       <Footer />
     </>
   );
