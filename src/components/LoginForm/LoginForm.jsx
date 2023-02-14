@@ -1,8 +1,12 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import { useState } from "react";
+import "./LoginForm.css";
 
 const LoginForm = () => {
+  const [error, setError] = useState(null);
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -18,14 +22,17 @@ const LoginForm = () => {
         .then((response) => {
           console.log(response);
         })
-        .catch((error) => {
-          return error;
+        .catch((e) => {
+          console.log(e.response.data.message);
+          setError(e.response.data.message);
+          console.log(error);
         });
       // return redirect("/sellers");
     },
   });
   return (
     <form onSubmit={formik.handleSubmit} className="form">
+      {error ? <span className="errors">{error}</span> : null}
       <label htmlFor="email">Email Address: </label>
       <input
         id="email"
