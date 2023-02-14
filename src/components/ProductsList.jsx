@@ -11,8 +11,6 @@ const ProductsList = ({ sellerShopName }) => {
         `${process.env.REACT_APP_BACKEND_URL}/sellers/${sellerShopName}/products`
       )
       .then((response) => {
-        console.log(response);
-        console.log(response.data);
         setProductsState(response.data);
       });
   }, [sellerShopName]);

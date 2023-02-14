@@ -10,6 +10,7 @@ import CustomerSignUp from "./pages/customer-signup/CustomerSignup";
 import ShopHome from "./pages/shop-home/ShopHome";
 import SellerPage from "./pages/seller-page/SellerPage";
 import UserContext from "./contexts/UserContext";
+import PrivateRoute from "./components/PrivateRoute";
 import "./App.css";
 
 const router = createBrowserRouter([
@@ -31,7 +32,14 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { path: "/sellers", element: <ShopHome /> },
-      { path: "/sellers/:sellerShopName", element: <SellerPage /> },
+      {
+        path: "/sellers/:sellerShopName",
+        element: <PrivateRoute />,
+        children: [
+          { path: "/sellers/:sellerShopName", element: <SellerPage /> },
+        ],
+      },
+
       // NEW PRODUCT FORM (restricted modal, not new path)
       // { path: "/sellers/:sellerShopName/profile", element: <SellerProfile /> },
     ],

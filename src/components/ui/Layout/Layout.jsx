@@ -5,33 +5,15 @@ import NavBar from "../../NavBar/NavBar";
 import UserContext from "../../../contexts/UserContext";
 
 const Layout = () => {
-  const ctxt = useContext(UserContext);
-
-  if (ctxt.token) {
-    return (
-      <>
-        <NavBar />
-        <main className="main-content">
-          <Outlet />
-        </main>
-        <Footer />
-      </>
-    );
-  } else {
-    return redirect("/login");
-  }
-
-  // return ctxt.token ? (
-  //   <p>whoops</p>
-  // ) : (
-  //   <>
-  //     <NavBar />
-  //     <main className="main-content">
-  //       <Outlet />
-  //     </main>
-  //     <Footer />
-  //   </>
-  // );
+  return (
+    <>
+      <NavBar />
+      <main className="main-content">
+        <Outlet />
+      </main>
+      <Footer />
+    </>
+  );
 };
 
 export default Layout;
