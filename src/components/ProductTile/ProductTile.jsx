@@ -6,10 +6,11 @@ const ProductTile = ({ product }) => {
     <>
       {/* <img /> */}
       <h2>{product.name}</h2>
-      <span className="product-summary">
+      <div className="product-summary">
         <p>Price: ${product.price}</p>
+        <p>Quantity: {product.quantity}</p>
         <button>view details</button>
-      </span>
+      </div>
     </>
   );
 };

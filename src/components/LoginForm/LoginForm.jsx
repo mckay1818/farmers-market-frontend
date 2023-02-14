@@ -21,9 +21,11 @@ const LoginForm = () => {
         .post(`${process.env.REACT_APP_BACKEND_URL}/login`, values)
         .then((response) => {
           console.log(response);
+          const userData = response.data.access_token;
+          console.log(userData);
+          localStorage.setItem("token", userData);
         })
         .catch((e) => {
-          console.log(e.response.data.message);
           setError(e.response.data.message);
           console.log(error);
         });
