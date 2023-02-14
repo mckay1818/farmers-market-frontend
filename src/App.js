@@ -61,6 +61,7 @@ const App = () => {
         token: token,
         isSeller: isSeller,
         isCustomer: isCustomer,
+        // onLogout: logoutHandler,
       }}
     >
       <RouterProvider router={router} />

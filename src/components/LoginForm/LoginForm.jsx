@@ -1,5 +1,6 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import axios from "axios";
 
 const LoginForm = () => {
   const formik = useFormik({
@@ -12,7 +13,15 @@ const LoginForm = () => {
       password: Yup.string().required("Required"),
     }),
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      axios
+        .post(`${process.env.REACT_APP_BACKEND_URL}/login`, values)
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          return error;
+        });
+      // return redirect("/sellers");
     },
   });
   return (
