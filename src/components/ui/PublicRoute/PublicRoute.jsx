@@ -1,10 +1,8 @@
-import { useContext } from "react";
-import { Outlet, redirect } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import NavBar from "../../NavBar/NavBar";
-import UserContext from "../../../contexts/UserContext";
 
-const Layout = () => {
+const PublicRoute = () => {
   return (
     <>
       <NavBar />
@@ -16,4 +14,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default PublicRoute;

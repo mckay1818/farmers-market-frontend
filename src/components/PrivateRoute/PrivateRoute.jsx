@@ -1,7 +1,8 @@
-import UserContext from "../contexts/UserContext";
-import { Navigate, Route, useNavigate } from "react-router-dom";
+import UserContext from "../../contexts/UserContext";
+import { useNavigate, Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Nav } from "react-bootstrap";
+import NavBar from "../NavBar/NavBar";
+import Footer from "../ui/Footer/Footer";
 
 const PrivateRoute = ({ children }) => {
   const token = UserContext.token;
@@ -12,7 +13,15 @@ const PrivateRoute = ({ children }) => {
     if (shouldRedirect) navigate("/");
   }, [shouldRedirect]);
 
-  return children;
+  return (
+    <>
+      <NavBar />
+      <main className="main-content">
+        <Outlet />
+      </main>
+      <Footer />
+    </>
+  );
 };
 
 export default PrivateRoute;
