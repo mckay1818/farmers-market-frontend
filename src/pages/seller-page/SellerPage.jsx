@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
-import ProductsList from "../../components/ProductsList";
+import ProductsList from "../../components/ProductsList/ProductsList";
+import "./SellerPage.css";
 
 const SellerPage = () => {
   const { sellerShopName } = useParams();
@@ -7,7 +8,7 @@ const SellerPage = () => {
   return (
     <>
       <h1>{sellerShopName}</h1>
-      <main>
+      <main className="products-list">
         <ProductsList sellerShopName={sellerShopName} />
       </main>
     </>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import ProductTile from "./ProductTile";
+import ProductTile from "../ProductTile/ProductTile";
 
 const ProductsList = ({ sellerShopName }) => {
   const [productsState, setProductsState] = useState([]);

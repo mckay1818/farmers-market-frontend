@@ -7,5 +7,5 @@ body{
 .main-content {
     display: block;
     overflow:auto;
-    padding-bottom: 2rem;
+    padding: 2rem;
 }
