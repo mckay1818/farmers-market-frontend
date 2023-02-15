@@ -43,7 +43,7 @@ const LoginForm = () => {
           navigate("/sellers");
         })
         .catch((e) => {
-          setError(e.response);
+          setError(e.response.data.message);
           console.log(error);
         });
     },
