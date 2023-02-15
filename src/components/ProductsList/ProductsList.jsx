@@ -21,11 +21,7 @@ const ProductsList = ({ sellerShopName }) => {
       {productsState.map((product) => {
         return (
           <li key={product.id} className="product-tile">
-            <ProductTile product={product}>
-              {/* <Link to={`/sellers/${sellerShopName}/products/${product.name}`}> */}
-              {product.name}
-              {/* </Link> */}
-            </ProductTile>
+            <ProductTile product={product}></ProductTile>
           </li>
         );
       })}

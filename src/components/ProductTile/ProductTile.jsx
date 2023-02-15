@@ -1,7 +1,6 @@
 import "./ProductTile.css";
 
 const ProductTile = ({ product }) => {
-  console.log(product);
   return (
     <>
       {/* <img /> */}

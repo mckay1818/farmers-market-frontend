@@ -8,7 +8,7 @@ import "./LoginForm.css";
 
 const LoginForm = () => {
   const [error, setError] = useState(null);
-  const { setRole, setCurrentUser } = useContext(UserContext);
+  const { setRole, currentUser, setCurrentUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   const formik = useFormik({
@@ -24,13 +24,17 @@ const LoginForm = () => {
       axios
         .post(`${process.env.REACT_APP_BACKEND_URL}/login`, values)
         .then((response) => {
+          console.log(response);
           const userData = response.data.access_token;
           const decodedData = JSON.parse(atob(userData.split(".")[1]));
+          console.log(userData, decodedData);
           // TODO - decide to save storage as cookies or local storage
           localStorage.setItem("token", userData);
           localStorage.setItem("role", JSON.stringify(decodedData["role"]));
+          console.log(localStorage);
           setCurrentUser(userData);
           setRole(decodedData["role"]);
+
           navigate("/sellers");
         })
         .catch((e) => {

@@ -4,6 +4,7 @@ import Layout from "./components/ui/Layout/Layout";
 import ErrorPage from "./pages/error/ErrorPage";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
+import Logout from "./pages/logout/Logout";
 import SellerSignUp from "./pages/seller-signup/SellerSignUp";
 import CustomerSignUp from "./pages/customer-signup/CustomerSignup";
 import ShopHome from "./pages/shop-home/ShopHome";
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "/login", element: <Login /> },
+      { path: "/logout", element: <Logout /> },
       { path: "/seller-signup", element: <SellerSignUp /> },
       { path: "/customer-signup", element: <CustomerSignUp /> },
     ],

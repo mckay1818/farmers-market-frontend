@@ -16,10 +16,10 @@ export const UserContextProvider = ({ children }) => {
   useEffect(() => {
     const tokenData = localStorage.getItem("token");
     const roleData = localStorage.getItem("role");
-    if (tokenData) {
+    if (tokenData && !currentUser) {
       setCurrentUser(tokenData);
     }
-    if (roleData) {
+    if (roleData && !currentUser) {
       setRole(roleData);
     }
   }, [currentUser]);

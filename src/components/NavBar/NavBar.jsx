@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Form } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -14,25 +14,42 @@ function NavBar() {
     <>
       <Navbar expand="lg" sticky="top" className="NavBar">
         <Container className="navbar-left">
-          <Navbar.Brand as={NavLink} to="/sellers">
-            🍅 Farmer's Market
-          </Navbar.Brand>
+          {currentUser ? (
+            <Navbar.Brand as={NavLink} to="/sellers">
+              🍅 Farmer's Market
+            </Navbar.Brand>
+          ) : (
+            <Navbar.Brand as={NavLink} to="/">
+              🍅 Farmer's Market
+            </Navbar.Brand>
+          )}
         </Container>
-        <Container className="navbar-right" id="navbar-right">
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <SearchBar />
-            <Nav className="me-auto">
-              <Nav.Link as={NavLink} end to="/sellers">
-                Home
-              </Nav.Link>
-              {/* TODO - FIGURE OUT LINKING TO PAGE */}
-              <Nav.Link as={NavLink} to="/sellers/:sellerShopName">
-                Profile
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
+        {currentUser ? (
+          <Container className="navbar-right" id="navbar-right">
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <SearchBar />
+              <Nav className="me-auto">
+                <Nav.Link as={NavLink} end to="/sellers">
+                  Home
+                </Nav.Link>
+                {/* TODO - FIGURE OUT LINKING TO PAGE */}
+                <Nav.Link as={NavLink} to="/sellers/:sellerShopName">
+                  Profile
+                </Nav.Link>
+                <Nav.Link as={NavLink} to="/logout">
+                  Logout
+                </Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        ) : (
+          <Container className="navbar-right" id="navbar-right">
+            <Nav.Link as={NavLink} to="/login">
+              Login
+            </Nav.Link>
+          </Container>
+        )}
       </Navbar>
     </>
   );
