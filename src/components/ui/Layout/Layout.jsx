@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import NavBar from "../../NavBar/NavBar";
 
-const PublicRoute = () => {
+const Layout = () => {
   return (
     <>
       <NavBar />
@@ -14,4 +14,4 @@ const PublicRoute = () => {
   );
 };
 
-export default PublicRoute;
+export default Layout;

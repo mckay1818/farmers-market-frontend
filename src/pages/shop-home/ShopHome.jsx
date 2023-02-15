@@ -3,7 +3,7 @@ import SellersList from "../../components/SellersList";
 const ShopHome = () => {
   return (
     <>
-      <h1>All of the shops will go here!</h1>
+      <h1>Welcome to your local market</h1>
       <SellersList />
     </>
   );

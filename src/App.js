@@ -1,7 +1,6 @@
-import { useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LandingPageLayout from "./components/ui/LandingPageLayout/LandingPageLayout";
-import PublicRoute from "./components/ui/PublicRoute/PublicRoute";
+import Layout from "./components/ui/Layout/Layout";
 import ErrorPage from "./pages/error/ErrorPage";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
@@ -28,7 +27,7 @@ const router = createBrowserRouter([
   //SELLER ROUTES ARE NOT PROTECTED ASIDE FROM PROFILE (AND ADD PRODUCT FUNCTIONALITY)
   {
     path: "/sellers",
-    element: <PublicRoute />,
+    element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
       { path: "/sellers", element: <ShopHome /> },
