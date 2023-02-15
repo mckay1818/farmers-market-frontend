@@ -8,7 +8,7 @@ import "./NavBar.css";
 import { UserContext } from "../../contexts/UserContext";
 
 function NavBar() {
-  const { currentUser } = useContext(UserContext);
+  const { currentUser, role, username } = useContext(UserContext);
 
   return (
     <>
@@ -34,9 +34,15 @@ function NavBar() {
                   Home
                 </Nav.Link>
                 {/* TODO - FIGURE OUT LINKING TO PAGE */}
-                <Nav.Link as={NavLink} to="/sellers/:sellerShopName">
-                  Profile
-                </Nav.Link>
+                {role === "seller" ? (
+                  <Nav.Link as={NavLink} to={`/sellers/${username}`}>
+                    Profile
+                  </Nav.Link>
+                ) : (
+                  <Nav.Link as={NavLink} to={`/customers/${username}`}>
+                    Profile
+                  </Nav.Link>
+                )}
                 <Nav.Link as={NavLink} to="/logout">
                   Logout
                 </Nav.Link>

@@ -7,7 +7,7 @@ import Login from "./pages/login/Login";
 import Logout from "./pages/logout/Logout";
 import SellerSignUp from "./pages/seller-signup/SellerSignUp";
 import CustomerSignUp from "./pages/customer-signup/CustomerSignup";
-import ShopHome from "./pages/shop-home/ShopHome";
+import AuthUserHome from "./pages/auth-user-home/AuthUserHome";
 import SellerPage from "./pages/seller-page/SellerPage";
 import { UserContextProvider } from "./contexts/UserContext";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
-      { path: "/sellers", element: <ShopHome /> },
+      { path: "/sellers", element: <AuthUserHome /> },
       { path: "/sellers/:sellerShopName", element: <SellerPage /> },
       // NEW PRODUCT FORM (restricted modal, not new path)
       // { path: "/sellers/:sellerShopName/profile", element: <SellerProfile /> },

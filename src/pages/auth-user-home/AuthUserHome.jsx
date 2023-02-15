@@ -1,5 +1,5 @@
 import SellersList from "../../components/SellersList/SellersList";
-import "./ShopHome.css";
+import "./AuthUserHome.css";
 
 const ShopHome = () => {
   return (
