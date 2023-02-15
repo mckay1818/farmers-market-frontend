@@ -2,13 +2,13 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { useState, useContext } from "react";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
 import "./LoginForm.css";
 
 const LoginForm = () => {
   const [error, setError] = useState(null);
-  const { setRole, currentUser, setCurrentUser } = useContext(UserContext);
+  const { setRole, setCurrentUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   const formik = useFormik({
