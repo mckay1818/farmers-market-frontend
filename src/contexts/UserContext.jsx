@@ -29,8 +29,9 @@ export const UserContextProvider = ({ children }) => {
     const usernameData = localStorage.getItem("username");
     if (tokenData && !currentUser) {
       setCurrentUser(tokenData);
-      setRole(roleData);
-      setUsername(usernameData);
+      // must parse the previously stringified role & username to grab values accurately
+      setRole(JSON.parse(roleData));
+      setUsername(JSON.parse(usernameData));
     }
   }, [currentUser]);
 
