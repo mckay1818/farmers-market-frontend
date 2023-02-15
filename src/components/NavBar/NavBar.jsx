@@ -12,7 +12,7 @@ function NavBar() {
 
   return (
     <>
-      <Navbar expand="lg" sticky="top" className="NavBar">
+      <Navbar expand="lg" sticky="top" className="nav-bar">
         <Container className="navbar-left">
           {currentUser ? (
             <Navbar.Brand as={NavLink} to="/sellers">
@@ -29,7 +29,7 @@ function NavBar() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <SearchBar />
-              <Nav className="me-auto">
+              <Nav className="navbar-right me-auto">
                 <Nav.Link as={NavLink} end to="/sellers">
                   Home
                 </Nav.Link>
