@@ -21,10 +21,15 @@ align-items: center;
 justify-content: center;
 }
 
+
+/* TODO - CORRECT COLLAPSIBLE LAYOUT */
 #navbar-right {
     width: 50%;
     height: 100%;
     display: block;
+    /* align-items: center;
+    text-align: center;
+    justify-content: center; */
 }
 
 .search-bar {
@@ -33,9 +38,14 @@ justify-content: center;
     align-items: flex-end;
 }
 
-#basic-navbar-nav {
+.navbar-toggler:hover {
+    background-color: rgb(255, 174, 52);
+}
+
+/* #basic-navbar-nav {
+    NOTE - block display prevents toggle collapse
     display: block;
     width: 100%;
     text-align: center;
     margin: auto;
-}
+} */

@@ -8,7 +8,7 @@ import "./LoginForm.css";
 
 const LoginForm = () => {
   const [error, setError] = useState(null);
-  const { setRole, setCurrentUser } = useContext(UserContext);
+  const { setRole, setCurrentUser, setUsername } = useContext(UserContext);
   const navigate = useNavigate();
 
   const formik = useFormik({
@@ -31,14 +31,19 @@ const LoginForm = () => {
           // TODO - decide to save storage as cookies or local storage
           localStorage.setItem("token", userData);
           localStorage.setItem("role", JSON.stringify(decodedData["role"]));
-          console.log(localStorage);
+          localStorage.setItem(
+            "username",
+            JSON.stringify(decodedData["username"])
+          );
+          console.log(decodedData);
           setCurrentUser(userData);
           setRole(decodedData["role"]);
+          setUsername(decodedData["username"]);
 
           navigate("/sellers");
         })
         .catch((e) => {
-          setError(e.response.data.message);
+          setError(e.response);
           console.log(error);
         });
     },

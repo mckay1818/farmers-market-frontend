@@ -8,7 +8,7 @@ const SellerPage = () => {
   return (
     <>
       <h1>{sellerShopName}</h1>
-      <main className="products-list">
+      <main className="products-list-container">
         <ProductsList sellerShopName={sellerShopName} />
       </main>
     </>

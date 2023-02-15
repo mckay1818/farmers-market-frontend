@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "./SellersList.css";
 
 const SellersList = () => {
   // const [error, setError] = useState();
@@ -25,8 +26,8 @@ const SellersList = () => {
     <>
       {sellersState.map((seller) => {
         return (
-          <li key={seller.id}>
-            <Link to={`/sellers/${seller.store_name}`} key={seller.id}>
+          <li key={seller.id} className="seller-tile">
+            <Link to={`/sellers/${seller.store_name}`} className="seller-name">
               {seller.store_name}
             </Link>
           </li>
