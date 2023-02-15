@@ -9,7 +9,7 @@ const ProductTile = ({ product }) => {
       <div className="product-summary">
         <p>Price: ${product.price}</p>
         <p>Quantity: {product.quantity}</p>
-        <button>view details</button>
+        <button className="details">view details</button>
       </div>
     </>
   );

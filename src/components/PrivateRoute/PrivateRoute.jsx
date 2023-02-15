@@ -4,7 +4,7 @@ import { useEffect, useState, useContext } from "react";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../ui/Footer/Footer";
 
-const PrivateRoute = ({ children }) => {
+const PrivateRoute = () => {
   const { currentUser } = useContext(UserContext);
   const [shouldRedirect, setShouldRedirect] = useState(!currentUser);
   const navigate = useNavigate();

@@ -7,7 +7,8 @@ import "./LoginForm.css";
 
 const LoginForm = () => {
   const [error, setError] = useState(null);
-  const { setCurrentUser } = useContext(UserContext);
+  const { currentUser, role, setRole, setCurrentUser } =
+    useContext(UserContext);
 
   const formik = useFormik({
     initialValues: {
@@ -23,10 +24,10 @@ const LoginForm = () => {
         .post(`${process.env.REACT_APP_BACKEND_URL}/login`, values)
         .then((response) => {
           const userData = response.data.access_token;
-          console.log(userData);
-          console.log(JSON.parse(atob(userData.split(".")[1])));
-          localStorage.setItem("token", userData);
+          const decodedData = JSON.parse(atob(userData.split(".")[1]));
+          // localStorage.setItem("token", userData);
           setCurrentUser(userData);
+          setRole(decodedData["role"]);
         })
         .catch((e) => {
           setError(e.response.data.message);
