@@ -1,0 +1,44 @@
+.add-product-btn{
+margin: 10px;
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+appearance: none;
+color: black;
+background-color: rgb(255, 200, 0);
+border: 1px solid black;
+border-radius: 6px;
+box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+display: inline-block;
+line-height: 20px;
+padding: 6px 16px;
+width: 50%;
+margin: 10px auto;
+}
+
+#add-product-submit {
+    margin: calc(var(--bs-modal-footer-gap) * .5);
+}
+
+.add-product-btn:hover {
+    background-color: rgb(255, 225, 0);
+    color: black;
+    border: 1px solid black;
+    }
+
+#add-product-btn:active {
+background-color: rgb(255, 225, 0);
+color: black;
+box-shadow: 0 5px #666;
+transform: translateY(4px);
+}
+
+#add-product-submit:active {
+    background-color: rgb(255, 225, 0);
+    color: black;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    }
+
+.add-product-btn:focus:not(:focus-visible):not(.focus-visible) {
+box-shadow: none;
+outline: none;
+}

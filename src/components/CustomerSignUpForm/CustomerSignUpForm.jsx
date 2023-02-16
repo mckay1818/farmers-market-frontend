@@ -35,7 +35,7 @@ const CustomerSignUpForm = () => {
       <input
         id="firstName"
         name="firstName"
-        type="firstName"
+        type="text"
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         value={formik.values.firstName}
@@ -48,7 +48,7 @@ const CustomerSignUpForm = () => {
       <input
         id="lastName"
         name="lastName"
-        type="lastName"
+        type="text"
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         value={formik.values.lastName}
@@ -74,7 +74,7 @@ const CustomerSignUpForm = () => {
       <input
         id="username"
         name="username"
-        type="username"
+        type="text"
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         value={formik.values.username}
@@ -100,7 +100,7 @@ const CustomerSignUpForm = () => {
       <input
         id="address1"
         name="address1"
-        type="address1"
+        type="text"
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         value={formik.values.address1}
@@ -113,7 +113,7 @@ const CustomerSignUpForm = () => {
       <input
         id="city"
         name="city"
-        type="city"
+        type="text"
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         value={formik.values.city}
@@ -126,7 +126,7 @@ const CustomerSignUpForm = () => {
       <input
         id="region"
         name="region"
-        type="region"
+        type="text"
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         value={formik.values.region}
@@ -139,7 +139,7 @@ const CustomerSignUpForm = () => {
       <input
         id="postalCode"
         name="postalCode"
-        type="postalCode"
+        type="text"
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         value={formik.values.postalCode}
