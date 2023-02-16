@@ -24,10 +24,9 @@ const LoginForm = () => {
       axios
         .post(`${process.env.REACT_APP_BACKEND_URL}/login`, values)
         .then((response) => {
-          console.log(response);
           const userData = response.data.access_token;
           const decodedData = JSON.parse(atob(userData.split(".")[1]));
-          console.log(userData, decodedData);
+
           // TODO - decide to save storage as cookies or local storage
           localStorage.setItem("token", userData);
           localStorage.setItem("role", JSON.stringify(decodedData["role"]));
@@ -35,7 +34,6 @@ const LoginForm = () => {
             "username",
             JSON.stringify(decodedData["username"])
           );
-          console.log(decodedData);
           setCurrentUser(userData);
           setRole(decodedData["role"]);
           setUsername(decodedData["username"]);
@@ -44,7 +42,6 @@ const LoginForm = () => {
         })
         .catch((e) => {
           setError(e.response.data.message);
-          console.log(error);
         });
     },
   });
