@@ -3,7 +3,8 @@
     height: 150px;
     border: 1px solid black;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     padding: 2rem;
     padding-bottom: 5rem;
     background-color: #f3f7eea5;
@@ -12,4 +13,10 @@
 .seller-name {
     font-size:xx-large;
     color: black;
+    margin-top: -15px;
+    margin-bottom: 10px;
+}
+
+.seller-info {
+   text-align: left;
 }

@@ -33,7 +33,7 @@ function NavBar() {
                 <Nav.Link as={NavLink} end to="/sellers">
                   Home
                 </Nav.Link>
-                {/* TODO - FIGURE OUT LINKING TO PAGE */}
+                {/* TODO - FIGURE OUT STATE */}
                 {role === "seller" ? (
                   <Nav.Link as={NavLink} to={`/sellers/${username}`}>
                     Profile

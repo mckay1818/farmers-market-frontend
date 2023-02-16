@@ -68,9 +68,7 @@ const SellerSignUpForm = () => {
         .max(5, "Must be exactly 5 digits"),
     }),
     onSubmit: (values) => {
-      console.log(values);
       const requestBody = transformRequest(values);
-      console.log(requestBody);
       axios
         .post(
           `${process.env.REACT_APP_BACKEND_URL}/sellers/signup`,

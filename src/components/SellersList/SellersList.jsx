@@ -27,9 +27,17 @@ const SellersList = () => {
       {sellersState.map((seller) => {
         return (
           <li key={seller.id} className="seller-tile">
-            <Link to={`/sellers/${seller.store_name}`} className="seller-name">
+            <Link
+              to={`/sellers/${seller.store_name}`}
+              className="seller-name"
+              state={{ seller }}
+            >
               {seller.store_name}
             </Link>
+            <div className="seller-info">
+              <p>{seller.store_description}</p>
+              <p>{`Address: ${seller.address_1}, ${seller.city}, ${seller.region} ${seller.postal_code}`}</p>
+            </div>
           </li>
         );
       })}
