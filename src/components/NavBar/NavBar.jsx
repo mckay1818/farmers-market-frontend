@@ -39,9 +39,14 @@ function NavBar() {
                     Profile
                   </Nav.Link>
                 ) : (
-                  <Nav.Link as={NavLink} to={`/customers/${username}`}>
-                    Profile
-                  </Nav.Link>
+                  <>
+                    <Nav.Link as={NavLink} end to={`/customers/${username}`}>
+                      Profile
+                    </Nav.Link>
+                    <Nav.Link as={NavLink} to={`/customers/${username}/cart`}>
+                      Cart
+                    </Nav.Link>
+                  </>
                 )}
                 <Nav.Link as={NavLink} to="/logout">
                   Logout

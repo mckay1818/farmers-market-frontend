@@ -16,6 +16,7 @@ const NewProductForm = () => {
       price: "",
       quantity: "",
       description: "",
+      // img: "",
     },
     validationSchema: Yup.object({
       name: Yup.string().required("Required").max(20, "max 20 characters"),
@@ -24,6 +25,7 @@ const NewProductForm = () => {
         .min(1, "Items must be priced at 1 token minimum"),
       quantity: Yup.number().required("Required").min(1, "Required"),
       description: Yup.string().required("Required"),
+      // img:
     }),
     onSubmit: (values) => {
       axios
