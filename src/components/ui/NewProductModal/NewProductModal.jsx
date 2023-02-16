@@ -31,13 +31,13 @@ function NewProductModal() {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button
+          {/* <Button
             className="add-product-btn"
             id="add-product-submit"
             onClick={handleClose}
           >
             Add product
-          </Button>
+          </Button> */}
         </Modal.Footer>
       </Modal>
     </>

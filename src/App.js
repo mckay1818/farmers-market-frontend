@@ -34,7 +34,6 @@ const router = createBrowserRouter([
     children: [
       { path: "/sellers", element: <AuthUserHome /> },
       { path: "/sellers/:sellerShopName", element: <SellerPage /> },
-      // NEW PRODUCT FORM (restricted modal, not new path)
       // { path: "/sellers/:sellerShopName/profile", element: <SellerProfile /> },
     ],
   },

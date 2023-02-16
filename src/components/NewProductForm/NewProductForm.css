@@ -5,3 +5,8 @@
 .new-product-input {
     width: 100%;
 }
+
+#new-product-btn {
+    margin-top: 2rem;
+    width: 100%;
+}

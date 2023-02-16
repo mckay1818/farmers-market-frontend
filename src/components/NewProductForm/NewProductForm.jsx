@@ -1,8 +1,14 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import axios from "axios";
+import { useState, useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 import "./NewProductForm.css";
 
 const NewProductForm = () => {
+  const [error, setError] = useState(null);
+  const { currentUser, username } = useContext(UserContext);
+
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -19,11 +25,27 @@ const NewProductForm = () => {
       description: Yup.string().required("Required"),
     }),
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      axios
+        .post(
+          `${process.env.REACT_APP_BACKEND_URL}/sellers/${username}/products`,
+          values,
+          {
+            headers: { Authorization: `Bearer ${currentUser}` },
+          }
+        )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((e) => {
+          console.log(e);
+          setError(e.response.data.message);
+        });
     },
   });
   return (
     <form onSubmit={formik.handleSubmit} className="form" id="new-product-form">
+      {error ? <span className="errors">{error}</span> : null}
+
       <div className="form-fields">
         <label htmlFor="name">Product Name: </label>
         <input
@@ -82,7 +104,9 @@ const NewProductForm = () => {
         ) : null}
       </div>
 
-      {/* <button type="submit">Add product to store</button> */}
+      <button type="submit" id="new-product-btn">
+        Add product to store
+      </button>
     </form>
   );
 };

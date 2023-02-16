@@ -14,7 +14,7 @@ const ProductsList = ({ sellerShopName }) => {
       .then((response) => {
         setProductsState(response.data);
       });
-  }, [sellerShopName]);
+  }, [sellerShopName, productsState]);
 
   return (
     <>
