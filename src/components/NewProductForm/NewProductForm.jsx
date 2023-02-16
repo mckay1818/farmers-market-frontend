@@ -1,5 +1,6 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import "./NewProductForm.css";
 
 const NewProductForm = () => {
   const formik = useFormik({
@@ -22,13 +23,14 @@ const NewProductForm = () => {
     },
   });
   return (
-    <form onSubmit={formik.handleSubmit} className="form">
+    <form onSubmit={formik.handleSubmit} className="form" id="new-product-form">
       <div className="form-fields">
         <label htmlFor="name">Product Name: </label>
         <input
           id="name"
           name="name"
           type="text"
+          className="new-product-input"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.name}
@@ -42,6 +44,7 @@ const NewProductForm = () => {
           id="price"
           name="price"
           type="number"
+          className="new-product-input"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.price}
@@ -55,6 +58,7 @@ const NewProductForm = () => {
           id="quantity"
           name="quantity"
           type="number"
+          className="new-product-input"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.quantity}
@@ -68,6 +72,7 @@ const NewProductForm = () => {
           id="description"
           name="description"
           type="text"
+          className="new-product-input"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.description}

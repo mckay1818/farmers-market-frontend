@@ -22,9 +22,9 @@ function NewProductModal() {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Add Product</Modal.Title>
+          <Modal.Title className="modal-title">Add Product</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="modal-body">
           <NewProductForm />
         </Modal.Body>
         <Modal.Footer>
