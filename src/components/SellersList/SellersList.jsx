@@ -3,6 +3,33 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "./SellersList.css";
 
+const transformResponse = (seller) => {
+  const {
+    first_name: firstName,
+    last_name: lastName,
+    email,
+    password,
+    store_name: storeName,
+    store_description: storeDescription,
+    address_1: address1,
+    city,
+    region,
+    postal_code: postalCode,
+  } = seller;
+  return {
+    firstName,
+    lastName,
+    email,
+    password,
+    storeName,
+    storeDescription,
+    address1,
+    city,
+    region,
+    postalCode,
+  };
+};
+
 const SellersList = () => {
   // const [error, setError] = useState();
   // const [isLoading, setIsLoading] = useState(false);
@@ -13,7 +40,10 @@ const SellersList = () => {
       .get(`${process.env.REACT_APP_BACKEND_URL}/sellers`)
       .then((response) => {
         // setIsLoading(true);
-        setSellersState(response.data);
+        const sellersResponse = response.data.map((seller) =>
+          transformResponse(seller)
+        );
+        setSellersState(sellersResponse);
         // setIsLoading(false);
       })
       .catch((error) => {
@@ -28,15 +58,15 @@ const SellersList = () => {
         return (
           <li key={seller.id} className="seller-tile">
             <Link
-              to={`/sellers/${seller.store_name}`}
+              to={`/sellers/${seller.storeName}`}
               className="seller-name"
               state={{ seller }}
             >
-              {seller.store_name}
+              {seller.storeName}
             </Link>
             <div className="seller-info">
-              <p>{seller.store_description}</p>
-              <p>{`Address: ${seller.address_1}, ${seller.city}, ${seller.region} ${seller.postal_code}`}</p>
+              <p>{seller.storeDescription}</p>
+              <p>{`Address: ${seller.address1}, ${seller.city}, ${seller.region} ${seller.postalCode}`}</p>
             </div>
           </li>
         );
