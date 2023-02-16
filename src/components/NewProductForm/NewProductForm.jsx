@@ -7,6 +7,7 @@ import "./NewProductForm.css";
 
 const NewProductForm = () => {
   const [error, setError] = useState(null);
+  const [creationConfirmed, setCreationConfirmed] = useState(null);
   const { currentUser, username } = useContext(UserContext);
 
   const formik = useFormik({
@@ -34,7 +35,8 @@ const NewProductForm = () => {
           }
         )
         .then((response) => {
-          console.log(response);
+          setError(null);
+          setCreationConfirmed(response.data);
         })
         .catch((e) => {
           console.log(e);
@@ -45,6 +47,9 @@ const NewProductForm = () => {
   return (
     <form onSubmit={formik.handleSubmit} className="form" id="new-product-form">
       {error ? <span className="errors">{error}</span> : null}
+      {creationConfirmed ? (
+        <span className="conf-msg">{creationConfirmed}</span>
+      ) : null}
 
       <div className="form-fields">
         <label htmlFor="name">Product Name: </label>

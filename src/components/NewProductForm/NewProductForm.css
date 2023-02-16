@@ -6,6 +6,12 @@
     width: 100%;
 }
 
+.conf-msg {
+    font-weight: bold;
+    color:rgb(0, 52, 0);
+    margin-bottom: 1rem;
+}
+
 #new-product-btn {
     margin-top: 2rem;
     width: 100%;
