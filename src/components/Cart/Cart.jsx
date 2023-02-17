@@ -20,6 +20,8 @@ const Cart = () => {
       });
   }, []);
 
+  // const calculateTotal = (cartItems) =>
+
   return (
     <main className="cart-page">
       <div className="items-list">
@@ -31,7 +33,15 @@ const Cart = () => {
           );
         })}
       </div>
-      <div className="checkout-section">{/* <h2>Total: {total}</h2> */}</div>
+      <div className="checkout-section">
+        <h2>
+          Total:
+          {cartItems.reduce(
+            (total, item) => total + item.price * item.quantity,
+            0
+          )}
+        </h2>
+      </div>
     </main>
   );
 };

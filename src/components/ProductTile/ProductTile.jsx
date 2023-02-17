@@ -6,7 +6,7 @@ import "./ProductTile.css";
 
 const ProductTile = ({ product }) => {
   const { role, username, currentUser } = useContext(UserContext);
-  const { cartItems, setCartItems } = useContext(CartContext);
+  const { setCartItems } = useContext(CartContext);
 
   const handleAddingItem = () => {
     axios
