@@ -1,7 +1,7 @@
 import "./CartItem.css";
 
 const CartItem = ({ product }) => {
-  const { name, quantity, price } = product;
+  const { name, price, quantity } = product;
   return (
     <div className="item-tile">
       <h2>Product: {name}</h2>

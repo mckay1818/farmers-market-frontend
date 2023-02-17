@@ -5,7 +5,7 @@ import CartItem from "../CartItem/CartItem";
 import "./Cart.css";
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState(null);
+  const [cartItems, setCartItems] = useState([]);
   const { currentUser, username } = useContext(UserContext);
 
   useEffect(() => {
@@ -14,9 +14,11 @@ const Cart = () => {
         headers: { Authorization: `Bearer ${currentUser}` },
       })
       .then((response) => {
+        console.log(response);
         setCartItems(response.data);
+        console.log(cartItems);
       });
-  }, [cartItems]);
+  }, []);
 
   return (
     <main className="cart-page">

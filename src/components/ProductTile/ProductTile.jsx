@@ -18,9 +18,12 @@ const ProductTile = ({ product }) => {
         }
       )
       .then((response) => {
-        // setCartItems(response.data);
-        console.log(response.data);
-        console.log(cartItems);
+        setCartItems(response.data);
+        alert("Item added to cart!");
+      })
+      .catch((e) => {
+        console.log(e);
+        alert(e.response.data.message);
       });
   };
 

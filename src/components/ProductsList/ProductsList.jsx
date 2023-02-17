@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
+import { CartContext } from "../../contexts/CartContext";
 import ProductTile from "../ProductTile/ProductTile";
 import "./ProductsList.css";
 
 const ProductsList = ({ sellerShopName }) => {
   const [productsState, setProductsState] = useState([]);
+  const { cartItems } = useContext(CartContext);
 
   useEffect(() => {
     axios
@@ -14,12 +16,12 @@ const ProductsList = ({ sellerShopName }) => {
       .then((response) => {
         setProductsState(response.data);
       });
-  }, [sellerShopName]);
+  }, [sellerShopName, cartItems]);
 
   return (
     <>
       {productsState.map((product) => {
-        return (
+        return product.quantity === 0 ? null : (
           <li key={product.id} className="product-tile">
             <ProductTile product={product}></ProductTile>
           </li>
