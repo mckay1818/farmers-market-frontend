@@ -26,7 +26,7 @@ const Logout = () => {
   return (
     <main>
       <h2 className="logout-header">You have been successfully logged out!</h2>
-      <NavLink to="/login">
+      <NavLink className="login-button" to="/login">
         <button className="login-button">sign back in</button>
       </NavLink>
     </main>

@@ -14,13 +14,9 @@ const Cart = () => {
         headers: { Authorization: `Bearer ${currentUser}` },
       })
       .then((response) => {
-        console.log(response);
         setCartItems(response.data);
-        console.log(cartItems);
       });
   }, []);
-
-  // const calculateTotal = (cartItems) =>
 
   return (
     <main className="cart-page">
@@ -34,7 +30,7 @@ const Cart = () => {
         })}
       </div>
       <div className="checkout-section">
-        <h2>
+        <h2 id="total">
           Total:
           {cartItems.reduce(
             (total, item) => total + item.price * item.quantity,

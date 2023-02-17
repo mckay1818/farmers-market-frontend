@@ -37,7 +37,9 @@ const ProductTile = ({ product }) => {
         {role === "seller" ? (
           <button className="details">edit product</button>
         ) : (
-          <button onClick={handleAddingItem}>add to cart</button>
+          <button className="details" onClick={handleAddingItem}>
+            add to cart
+          </button>
         )}
       </div>
     </>
