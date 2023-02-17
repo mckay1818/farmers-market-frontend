@@ -1,9 +1,13 @@
 import { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
+import { CartContext } from "../../contexts/CartContext";
 import "./ProductTile.css";
 
 const ProductTile = ({ product }) => {
   const { role } = useContext(UserContext);
+  const { addItemToCart } = useContext(CartContext);
+
+  const handleAddingItem = () => addItemToCart(product);
 
   return (
     <>
@@ -14,10 +18,9 @@ const ProductTile = ({ product }) => {
         <p>Quantity: {product.quantity}</p>
         {role === "seller" ? (
           <button className="details">edit product</button>
-        ): (
-          //TODO - add option for adding item to cart if a customer
+        ) : (
+          <button onClick={handleAddingItem}>add to cart</button>
         )}
-   
       </div>
     </>
   );

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { UserContext } from "../../contexts/UserContext";
 import "./SellersList.css";
 
 const transformResponse = (seller) => {

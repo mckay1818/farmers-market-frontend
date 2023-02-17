@@ -21,7 +21,7 @@ const ProductsList = ({ sellerShopName }) => {
       {productsState.map((product) => {
         return (
           <li key={product.id} className="product-tile">
-            <ProductTile product={product}></ProductTile>
+            <ProductTile product={product} />
           </li>
         );
       })}

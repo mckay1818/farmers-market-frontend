@@ -1,5 +1,3 @@
-import Cart from "../Cart/Cart";
-
 const CartItem = ({ product }) => {
   const { name, quantity } = product;
   return (

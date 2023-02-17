@@ -12,6 +12,7 @@ import SellerPage from "./pages/seller-page/SellerPage";
 import SellerProfile from "./pages/seller-profile/SellerProfile";
 import Cart from "./components/Cart/Cart";
 import { UserContextProvider } from "./contexts/UserContext";
+import { CartContextProvider } from "./contexts/CartContext";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import "./App.css";
 
@@ -55,7 +56,9 @@ const router = createBrowserRouter([
 const App = () => {
   return (
     <UserContextProvider>
-      <RouterProvider router={router} />
+      <CartContextProvider>
+        <RouterProvider router={router} />
+      </CartContextProvider>
     </UserContextProvider>
   );
 };

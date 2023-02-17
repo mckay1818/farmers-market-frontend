@@ -11,7 +11,6 @@ const SellerPage = ({ seller }) => {
   const { username } = useContext(UserContext);
   // TODO - OMIT STATE HERE AND IN SELLERSLIST
   const { state } = useLocation();
-  console.log(state);
 
   return (
     <>
