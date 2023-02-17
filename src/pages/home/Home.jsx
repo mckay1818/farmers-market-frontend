@@ -4,7 +4,7 @@ import "./Home.css";
 const Home = () => {
   return (
     <div className="home-body">
-      <Link to="/login">
+      <Link className="login-button" to="/login">
         <button className="login-button">sign in</button>
       </Link>
       <div className="sign-up-messages">

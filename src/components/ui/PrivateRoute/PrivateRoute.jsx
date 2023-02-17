@@ -1,8 +1,8 @@
-import { UserContext } from "../../contexts/UserContext";
+import { UserContext } from "../../../contexts/UserContext";
 import { useNavigate, Outlet } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
-import NavBar from "../NavBar/NavBar";
-import Footer from "../ui/Footer/Footer";
+import NavBar from "../../NavBar/NavBar";
+import Footer from "../Footer/Footer";
 
 const PrivateRoute = () => {
   const { currentUser } = useContext(UserContext);

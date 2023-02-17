@@ -25,3 +25,7 @@
 .checkout-section {
     grid-column: 3 / 4;
 }
+
+.checkout-btn {
+    width: 100%;
+}
