@@ -1,9 +1,13 @@
+import "./CartItem.css";
+
 const CartItem = ({ product }) => {
-  const { name, quantity } = product;
+  const { name, quantity, price } = product;
   return (
-    <div>
-      <h2>{name}</h2>
-      <span>{quantity}</span>
+    <div className="item-tile">
+      <h2>Product: {name}</h2>
+      <p>Quantity: {quantity}</p>
+      <p>Price per item: {price}</p>
+      <p>Subtotal: {quantity * price} </p>
     </div>
   );
 };

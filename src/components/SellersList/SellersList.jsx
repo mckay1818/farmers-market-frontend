@@ -56,7 +56,7 @@ const SellersList = () => {
     <>
       {sellersState.map((seller) => {
         return (
-          <li key={seller.id} className="seller-tile">
+          <li className="seller-tile" key={seller.id}>
             <Link
               to={`/sellers/${seller.storeName}`}
               className="seller-name"

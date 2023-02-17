@@ -1,0 +1,13 @@
+/* h2 {
+    font-size:xx-large;
+    color: black;
+    margin-top: -15px;
+    margin-bottom: 10px;
+} */
+
+.cart-page {
+    display: flex;
+    align-items: center;
+}
+
+/* .items-list */

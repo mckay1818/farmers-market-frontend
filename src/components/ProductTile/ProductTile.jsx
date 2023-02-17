@@ -5,9 +5,12 @@ import "./ProductTile.css";
 
 const ProductTile = ({ product }) => {
   const { role } = useContext(UserContext);
-  const { addItemToCart } = useContext(CartContext);
+  const { addItemToCart, addToTotal } = useContext(CartContext);
 
-  const handleAddingItem = () => addItemToCart(product);
+  const handleAddingItem = () => {
+    addItemToCart(product);
+    addToTotal(product.price);
+  };
 
   return (
     <>

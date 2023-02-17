@@ -2,11 +2,14 @@ import { createContext, useState } from "react";
 
 export const CartContext = createContext({
   cartItems: [],
+  total: 0,
   addItemToCart: () => {},
+  setTotal: () => {},
 });
 
 export const CartContextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
+  const [total, setTotal] = useState(0);
 
   const addItemToCart = (product) => {
     let updatedCartItems = [];
@@ -19,10 +22,14 @@ export const CartContextProvider = ({ children }) => {
       updatedCartItems = [...cartItems, { ...product, quantity: 1 }];
     }
     setCartItems(updatedCartItems);
-    console.log(updatedCartItems);
   };
 
-  const value = { cartItems, addItemToCart };
+  const addToTotal = (price) => {
+    setTotal(total + price);
+    console.log(total);
+  };
+
+  const value = { cartItems, addItemToCart, addToTotal, total };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
