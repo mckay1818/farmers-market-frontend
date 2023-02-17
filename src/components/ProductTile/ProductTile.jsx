@@ -1,15 +1,27 @@
 import { useContext } from "react";
+import axios from "axios";
 import { UserContext } from "../../contexts/UserContext";
 import { CartContext } from "../../contexts/CartContext";
 import "./ProductTile.css";
 
 const ProductTile = ({ product }) => {
-  const { role } = useContext(UserContext);
-  const { addItemToCart, addToTotal } = useContext(CartContext);
+  const { role, username, currentUser } = useContext(UserContext);
+  const { cartItems, setCartItems } = useContext(CartContext);
 
   const handleAddingItem = () => {
-    addItemToCart(product);
-    addToTotal(product.price);
+    axios
+      .post(
+        `${process.env.REACT_APP_BACKEND_URL}/customers/${username}/cart/${product.id}`,
+        product.id,
+        {
+          headers: { Authorization: `Bearer ${currentUser}` },
+        }
+      )
+      .then((response) => {
+        // setCartItems(response.data);
+        console.log(response.data);
+        console.log(cartItems);
+      });
   };
 
   return (

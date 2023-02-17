@@ -14,14 +14,14 @@ const ProductsList = ({ sellerShopName }) => {
       .then((response) => {
         setProductsState(response.data);
       });
-  }, [sellerShopName, productsState]);
+  }, [sellerShopName]);
 
   return (
     <>
       {productsState.map((product) => {
         return (
           <li key={product.id} className="product-tile">
-            <ProductTile product={product} />
+            <ProductTile product={product}></ProductTile>
           </li>
         );
       })}
