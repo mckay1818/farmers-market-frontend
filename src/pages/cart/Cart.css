@@ -1,8 +1,7 @@
 .product-label, #total {
     font-size:xx-large;
     color: black;
-    margin-top: -15px;
-    margin-bottom: 10px;
+    align-items: center;
 }
 
 .cart-page {
@@ -24,8 +23,15 @@
 
 .checkout-section {
     grid-column: 3 / 4;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: #f3f7eecd;
+    border: 1px solid black;
+    border-radius: 5%;
 }
 
 .checkout-btn {
-    width: 100%;
+    width: 80%;
+    padding: 10px;
 }

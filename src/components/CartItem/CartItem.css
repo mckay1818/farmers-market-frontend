@@ -3,9 +3,8 @@
     flex-direction: column;
     max-height: 100px;
     border: 1px solid black;
-    padding: 2rem;
-    padding-bottom: 5rem;
-    background-color: #f3f7eea5;
+    padding: 1rem;
+    background-color: #f3f7eecd;
 }
 
 .product-details {

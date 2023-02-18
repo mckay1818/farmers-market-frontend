@@ -9,8 +9,8 @@ import SellerSignUp from "./pages/seller-signup/SellerSignUp";
 import CustomerSignUp from "./pages/customer-signup/CustomerSignup";
 import AuthUserHome from "./pages/auth-user-home/AuthUserHome";
 import SellerPage from "./pages/seller-page/SellerPage";
-import SellerProfile from "./pages/seller-profile/SellerProfile";
-import Cart from "./components/Cart/Cart";
+// import SellerProfile from "./pages/seller-profile/SellerProfile";
+import Cart from "./pages/cart/Cart";
 import OrderSuccess from "./pages/order-success/OrderSuccess";
 import OrderCanceled from "./pages/order-canceled/OrderCanceled";
 import { UserContextProvider } from "./contexts/UserContext";
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/sellers", element: <AuthUserHome /> },
       { path: "/sellers/:sellerShopName", element: <SellerPage /> },
-      { path: "/sellers/:sellerShopName/profile", element: <SellerProfile /> },
+      // { path: "/sellers/:sellerShopName/profile", element: <SellerProfile /> },
     ],
   },
   {

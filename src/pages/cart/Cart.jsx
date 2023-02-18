@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import axios from "axios";
-import CartItem from "../CartItem/CartItem";
+import CartItem from "../../components/CartItem/CartItem";
 import "./Cart.css";
 
 const Cart = () => {
