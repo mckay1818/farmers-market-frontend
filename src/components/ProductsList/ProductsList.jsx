@@ -4,7 +4,7 @@ import { CartContext } from "../../contexts/CartContext";
 import ProductTile from "../ProductTile/ProductTile";
 import "./ProductsList.css";
 
-const ProductsList = ({ sellerShopName }) => {
+const ProductsList = ({ sellerShopName, setItemAddedMsg }) => {
   const [productsState, setProductsState] = useState([]);
   const { cartItems } = useContext(CartContext);
 
@@ -14,6 +14,9 @@ const ProductsList = ({ sellerShopName }) => {
         `${process.env.REACT_APP_BACKEND_URL}/sellers/${sellerShopName}/products`
       )
       .then((response) => {
+        // TODO - SORT PRODUCTS
+        // let productsResponse = response.data;
+        // productsResponse.sort((a, b) => a.name - b.name);
         setProductsState(response.data);
       });
   }, [sellerShopName, cartItems]);

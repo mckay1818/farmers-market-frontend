@@ -33,16 +33,15 @@ function NavBar() {
                 <Nav.Link as={NavLink} end to="/sellers">
                   Home
                 </Nav.Link>
-                {/* TODO - FIGURE OUT STATE */}
                 {role === "seller" ? (
                   <Nav.Link as={NavLink} to={`/sellers/${username}`}>
                     Profile
                   </Nav.Link>
                 ) : (
                   <>
-                    <Nav.Link as={NavLink} end to={`/customers/${username}`}>
+                    {/* <Nav.Link as={NavLink} end to={`/customers/${username}`}>
                       Profile
-                    </Nav.Link>
+                    </Nav.Link> */}
                     <Nav.Link as={NavLink} to={`/customers/${username}/cart`}>
                       Cart
                     </Nav.Link>

@@ -1,16 +1,13 @@
 import { useContext } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
 import ProductsList from "../../components/ProductsList/ProductsList";
 import NewProductModal from "../../components/ui/NewProductModal/NewProductModal";
-import SellerProfile from "../seller-profile/SellerProfile";
 import "./SellerPage.css";
 
 const SellerPage = ({ seller }) => {
   const { sellerShopName } = useParams();
   const { username } = useContext(UserContext);
-  // TODO - OMIT STATE HERE AND IN SELLERSLIST
-  const { state } = useLocation();
 
   return (
     <>
@@ -18,13 +15,13 @@ const SellerPage = ({ seller }) => {
       {sellerShopName === username ? (
         <>
           <NewProductModal />
-          <Link
+          {/* <Link
             to={`/sellers/${sellerShopName}/profile`}
             className="seller-name profile-link"
             state={{ seller }}
           >
             Edit Profile
-          </Link>
+          </Link> */}
         </>
       ) : null}
       <main className="products-list-container">

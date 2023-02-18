@@ -18,6 +18,7 @@ const ProductTile = ({ product }) => {
         }
       )
       .then((response) => {
+        console.log(response.data);
         setCartItems(response.data);
         alert("Item added to cart!");
       })
