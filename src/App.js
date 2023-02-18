@@ -52,15 +52,14 @@ const router = createBrowserRouter([
       //     element: <CustomerProfile />,
       //   },
       { path: "/customers/:customerUsername/cart", element: <Cart /> },
-    ],
-  },
-  {
-    path: "/order",
-    element: <Layout />,
-    errorElement: <ErrorPage />,
-    children: [
-      { path: "/order/success", element: <OrderSuccess /> },
-      { path: "/order/cancel", element: <OrderCanceled /> },
+      {
+        path: "/customers/:customerUsername/order/success",
+        element: <OrderSuccess />,
+      },
+      {
+        path: "/customers/:customerUsername/order/cancel",
+        element: <OrderCanceled />,
+      },
     ],
   },
 ]);
