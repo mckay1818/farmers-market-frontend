@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
 import ProductsList from "../../components/ProductsList/ProductsList";
 import NewProductModal from "../../components/ui/NewProductModal/NewProductModal";

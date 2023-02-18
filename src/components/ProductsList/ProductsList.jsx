@@ -24,6 +24,8 @@ const ProductsList = ({ sellerShopName, setItemAddedMsg }) => {
   return (
     <>
       {productsState.map((product) => {
+        /* filter out-of-stock products out of store display */
+
         return product.quantity === 0 ? null : (
           <li key={product.id} className="product-tile">
             <ProductTile product={product}></ProductTile>

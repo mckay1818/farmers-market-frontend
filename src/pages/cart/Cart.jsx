@@ -38,7 +38,7 @@ const Cart = () => {
       .then((response) => {
         setCartItems(response.data);
       });
-  }, [currentUser]);
+  }, [currentUser, username]);
 
   return (
     <main className="cart-page">
