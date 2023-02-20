@@ -12,30 +12,30 @@ This website allows users to create an account as a Seller or a Customer. All re
 
 ## Tech Stack
 
--React: frontend
--Flask: backend REST API
--PostgreSQL: database
--SQLAlchemy: object-relational mapper (ORM)
--Stripe API: customer checkout
--Heroku: deployment [(view deployed frontend)](https://farmers-market-fe.herokuapp.com/)
--Docker: containerization
--AWS: ECS, RDS, S3 (in-progress)
+* React: frontend
+* Flask: backend REST API
+* PostgreSQL: database
+* SQLAlchemy: object-relational mapper (ORM)
+* Stripe API: customer checkout
+* Heroku: deployment [(view deployed frontend)](https://farmers-market-fe.herokuapp.com/)
+* Docker: containerization
+* AWS: ECS, RDS, S3 (in-progress)
 
 ## Frontend Features
 
--Integration with Stripe API for customer checkout
--MPA feel using React Router
--Conditionally rendered UI based on authenticated user roles; preservation of authentication on page refresh by [hooking a token-grabbing Effect into User Context](https://github.com/mckay1818/farmers-market-frontend/blob/main/src/contexts/UserContext.jsx) (not the most secure option, but a quick workaround for holding onto JWTs!)
+* Integration with Stripe API for customer checkout
+* MPA feel using React Router
+* Conditionally rendered UI based on authenticated user roles; preservation of authentication on page refresh by [hooking a token-grabbing Effect into User Context](https://github.com/mckay1818/farmers-market-frontend/blob/main/src/contexts/UserContext.jsx) (not the most secure option, but a quick workaround for holding onto JWTs!)
 
 ## View Deployed Project
 
--The deployed project on Heroku can be viewed at [https://farmers-market-fe.herokuapp.com/](https://farmers-market-fe.herokuapp.com/)
--Test Seller account credentials:
-    -email: tammyburns@fakemail.com
-    -password: cowcrazy
--Test Customer account credentials:
-    -email: m1@fakemail.com
-    -password: greenbeans
+* The deployed project on Heroku can be viewed at [https://farmers-market-fe.herokuapp.com/](https://farmers-market-fe.herokuapp.com/)
+* Test Seller account credentials:
+    * email: tammyburns@fakemail.com
+    * password: cowcrazy
+* Test Customer account credentials:
+    * email: m1@fakemail.com
+    * password: greenbeans
 
 ## Installation
 
