@@ -6,7 +6,7 @@ This website allows users to create an account as a Seller or a Customer. All re
 
 <img width="600" alt="Farmer's Market landing page" src="https://user-images.githubusercontent.com/72710253/219997390-e9afb831-19b2-415f-a28f-e01dc0918730.png">
 <img width="600" alt="Customer's View of a Seller page" src="https://user-images.githubusercontent.com/72710253/219997521-fbe40a0b-a95f-486b-b6af-9f187a3d0b82.png">
-<img width="630" alt="Cart page shown with dynamically collapsed navigation bar" src="https://user-images.githubusercontent.com/72710253/219997635-cd3d15d0-671c-4bd3-823d-8b15c20584ee.png">
+<img width="330" alt="Cart page shown with dynamically collapsed navigation bar" src="https://user-images.githubusercontent.com/72710253/219997635-cd3d15d0-671c-4bd3-823d-8b15c20584ee.png">
 
 
 
