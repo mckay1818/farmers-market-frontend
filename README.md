@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Farmer's Market - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An e-commerce website that allows farmers to sell directly to consumers in an open online marketplace.
 
-## Available Scripts
+This website allows users to create an account as a Seller or a Customer. All registered users are able to access the marketplace of Sellers on login. Sellers can build out their store by adding products, and Customers can add these products to their cart and checkout with Stripe. 
 
-In the project directory, you can run:
+<img width="600" alt="Farmer's Market landing page" src="https://user-images.githubusercontent.com/72710253/219997390-e9afb831-19b2-415f-a28f-e01dc0918730.png">
+<img width="600" alt="Customer's View of a Seller page" src="https://user-images.githubusercontent.com/72710253/219997521-fbe40a0b-a95f-486b-b6af-9f187a3d0b82.png">
+<img width="630" alt="Cart page shown with dynamically collapsed navigation bar" src="https://user-images.githubusercontent.com/72710253/219997635-cd3d15d0-671c-4bd3-823d-8b15c20584ee.png">
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+-React: frontend
+-Flask: backend REST API
+-PostgreSQL: database
+-SQLAlchemy: object-relational mapper (ORM)
+-Stripe API: customer checkout
+-Heroku: deployment [(view deployed frontend)](https://farmers-market-fe.herokuapp.com/)
+-Docker: containerization
+-AWS: ECS, RDS, S3 (in-progress)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Frontend Features
 
-### `npm run build`
+-Integration with Stripe API for customer checkout
+-MPA feel using React Router
+-Conditionally rendered UI based on authenticated user roles; preservation of authentication on page refresh by [hooking a token-grabbing Effect into User Context](https://github.com/mckay1818/farmers-market-frontend/blob/main/src/contexts/UserContext.jsx) (not the most secure option, but a quick workaround for holding onto JWTs!)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## View Deployed Project
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-The deployed project on Heroku can be viewed at [https://farmers-market-fe.herokuapp.com/](https://farmers-market-fe.herokuapp.com/)
+-Test Seller account credentials:
+    -email: tammyburns@fakemail.com
+    -password: cowcrazy
+-Test Customer account credentials:
+    -email: m1@fakemail.com
+    -password: greenbeans
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Fork and clone this repository
+2. Run `npm install` to install dependencies
+3. Run `npm start` to start the development server
