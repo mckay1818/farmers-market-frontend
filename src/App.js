@@ -52,6 +52,13 @@ const router = createBrowserRouter([
       //     element: <CustomerProfile />,
       //   },
       { path: "/customers/:customerUsername/cart", element: <Cart /> },
+    ],
+  },
+  {
+    path: "/customers/:customerUsername",
+    element: <Layout />,
+    errorElement: <ErrorPage />,
+    children: [
       {
         path: "/customers/:customerUsername/order/success",
         element: <OrderSuccess />,
