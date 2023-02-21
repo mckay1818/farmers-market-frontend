@@ -37,7 +37,7 @@ This website allows users to create an account as a Seller or a Customer. All re
     * email: m1@fakemail.com
     * password: greenbeans
 
-## Installation
+## Frontend Installation
 
 1. Fork and clone this repository
 2. Run `npm install` to install dependencies
